@@ -2,6 +2,11 @@
 // Please visit https://alexa.design/cookbook for additional examples on implementing slots, dialog management,
 // session persistence, api calls, and more.
 const Alexa = require('ask-sdk-core');
+const { DynamoDbPersistenceAdapter } = require('ask-sdk-dynamodb-persistence-adapter');
+const persistenceAdapter = new DynamoDbPersistenceAdapter({
+  tableName: 'ForcaStates',
+  createTable: true
+});
 
 function resolveSlot(slot) {
     try {
