@@ -83,8 +83,6 @@ const SuggestLetterIntentHandler = {
     
     handle(handlerInput) {
         
-        // TODO: implement
-        
         const request = handlerInput.requestEnvelope.request;
         const slots = request.intent.slots;
         const letter = slots.letter.value || '';
@@ -92,6 +90,7 @@ const SuggestLetterIntentHandler = {
         let speechText = '';
 
         if (LETTERS.includes(letter)) {
+            // TODO: validate the letter
             speechText = `Você chutou ${letter.toUpperCase()}, mas errou! Tente outra.`;
         } else {
             speechText = `A letra que você chutou não é válida. Tente outra.`;
