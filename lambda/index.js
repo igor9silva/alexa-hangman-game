@@ -18,7 +18,7 @@ const LaunchRequestHandler = {
     },
     handle(handlerInput) {
         // const speechText = 'Welcome, you can say Hello or Help. Which would you like to try?';
-        const speechText = 'Olá, você está no Jogo da Forca! Já sorteei uma palavra e o jogo começou! Chute uma letra.';
+        const speechText = 'Olá, você está no Jogo da Forca! Já sorteei uma palavra e o jogo começou! A palavra possui 10 letras. Você tem 5 vidas. Chute uma letra.';
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt(speechText)
