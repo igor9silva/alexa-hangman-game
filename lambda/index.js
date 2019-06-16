@@ -155,4 +155,5 @@ exports.handler = Alexa.SkillBuilders.custom()
         IntentReflectorHandler) // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
     .addErrorHandlers(
         ErrorHandler)
+    .withPersistenceAdapter(persistenceAdapter)
     .lambda();
