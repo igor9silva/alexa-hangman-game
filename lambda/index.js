@@ -3,6 +3,15 @@
 // session persistence, api calls, and more.
 const Alexa = require('ask-sdk-core');
 
+function resolveSlot(slot) {
+    try {
+		return slot.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+	} catch(err) {
+	    console.log(err.message);
+	    return slot.value;
+	}
+};
+
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
