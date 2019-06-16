@@ -37,7 +37,7 @@ const SuggestLetterIntentHandler = {
         
         console.log('Letter slot: ' + letterSlotRaw + ' (raw) :' + letterSlot + ' (parsed)');
 
-        const speechText = 'Olá mundo!';
+        const speechText = 'Você chutou ' + letterSlot + ', mas errou! Tente outra.';
         return handlerInput.responseBuilder
             .speak(speechText)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
@@ -50,7 +50,7 @@ const GetStatusIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'GetStatusIntent';
     },
     handle(handlerInput) {
-        const speechText = 'Errou. Tente outra.';
+        const speechText = 'Você ainda tem 3 vidas. Lembrando: a palavra possui 7 letras.';
         return handlerInput.responseBuilder
             .speak(speechText)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
