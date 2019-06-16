@@ -50,9 +50,7 @@ const LaunchRequestHandler = {
     },
     
     async handle(handlerInput) {
-        
-        // TODO: implement
-        
+
         const sentences = [
             `Olá, você está no Jogo da Forca!`,
             `Já sorteei uma palavra e o jogo começou!`,
@@ -62,9 +60,13 @@ const LaunchRequestHandler = {
         ];
         
         const attributes = await handlerInput.attributesManager.getPersistentAttributes();
-        
-        attributes.word = 'ventilador';
-        attributes.triedLetters = ['e', 'n', 'i', 'l', 'a'];
+
+        // create initial attributes
+        attributes.word = 'ventilador'; // TODO: shuffle a word
+        attributes.triedLetters = ['e', 'n', 'i', 'l', 'a']; // TODO: clear it
+
+        handlerInput.attributesManager.setPersistentAttributes(attributes);
+        handlerInput.attributesManager.savePersistentAttributes();
         
         return handlerInput.responseBuilder
                 .speak(sentences.join(' '))
