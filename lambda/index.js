@@ -34,8 +34,9 @@ const SuggestLetterIntentHandler = {
 
         const letterSlotRaw = handlerInput.requestEnvelope.request.intent.slots.letter.value;
         const letterSlot = resolveSlot(letterSlotRaw);
-
         
+        console.log('Letter slot: ' + letterSlotRaw + ' (raw) :' + letterSlot + ' (parsed)');
+
         const speechText = 'Olá mundo!';
         return handlerInput.responseBuilder
             .speak(speechText)
