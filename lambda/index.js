@@ -69,7 +69,7 @@ const LaunchRequestHandler = {
         // handlerInput.attributesManager.savePersistentAttributes();
         
         return handlerInput.responseBuilder
-                .speak(sentences.join(' '))
+                .speak('tentes')
                 .getResponse();
     }
 };
