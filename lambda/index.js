@@ -9,20 +9,41 @@ const persistenceAdapter = new DynamoDbPersistenceAdapter({
 });
 
 const MAX_LIVES = 5;
+
 const WORDS = [
     'ventilador',
-    //'parede',
-    //'figado',
+    'parede',
+    'figado',
 ];
 
-function resolveSlot(slot) {
-    try {
-		return slot.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-	} catch(err) {
-	    console.log(err.message);
-	    return slot.value;
-	}
-}
+const LETTERS = [
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'F',
+    'G',
+    'H',
+    'I',
+    'J',
+    'K',
+    'L',
+    'M',
+    'N',
+    'O',
+    'P',
+    'Q',
+    'R',
+    'S',
+    'T',
+    'U',
+    'V',
+    'X',
+    'Z',
+    'W',
+    'Y',
+];
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -30,7 +51,7 @@ const LaunchRequestHandler = {
     },
     async handle(handlerInput) {
         // const speechText = 'Welcome, you can say Hello or Help. Which would you like to try?';
-        const speechText = 'Olá, você está no Jogo da Forca! Já sorteei uma palavra e o jogo começou! A palavra possui 10 letras. Você tem 5 vidas. Chute uma letra.';
+        const speechText = `Olá, você está no Jogo da Forca! Já sorteei uma palavra e o jogo começou! A palavra possui 10 letras. Você tem 5 vidas. Chute uma letra.`;
         
         const attributes = await handlerInput.attributesManager.getPersistentAttributes();
         
@@ -50,15 +71,18 @@ const SuggestLetterIntentHandler = {
     },
     handle(handlerInput) {
 
-        const letterSlotRaw = handlerInput.requestEnvelope.request.intent.slots.letter.value;
-        const letterSlot = resolveSlot(letterSlotRaw);
+        const letter = handlerInput.requestEnvelope.request.intent.slots.letter.value || '';
         
-        console.log('Letter slot: ' + letterSlotRaw + ' (raw) :' + letterSlot + ' (parsed)');
-
-        const speechText = 'Você chutou ' + letterSlotRaw + ', mas errou! Tente outra.';
+        let speechText = '';
+        
+        if (LETTERS.includes(letter)) {
+            speechText = `Você chutou ${letter.toUpperCase()}, mas errou! Tente outra.`;
+        } else {
+            speechText = `A letra que você chutou não é válida. Tente outra.`;
+        }
+    
         return handlerInput.responseBuilder
             .speak(speechText)
-            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
             .getResponse();
     }
 };
