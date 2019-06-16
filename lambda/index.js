@@ -49,7 +49,7 @@ const LaunchRequestHandler = {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
     
-    async handle(handlerInput) {
+    handle(handlerInput) {
 
         const sentences = [
             `Olá, você está no Jogo da Forca!`,
