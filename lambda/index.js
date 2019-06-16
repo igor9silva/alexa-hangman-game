@@ -10,7 +10,7 @@ function resolveSlot(slot) {
 	    console.log(err.message);
 	    return slot.value;
 	}
-};
+}
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -31,10 +31,9 @@ const SuggestLetterIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'SuggestLetterIntent';
     },
     handle(handlerInput) {
-        // handlerInput.requestEnvelope.request.
-        
-        const letterSlowRaw = handlerInput.requestEnvelope.request.intent.slots.letter.value;
-        // const letterSlotRaw = this.event.request.intent.slots.letter.value;
+
+        const letterSlotRaw = handlerInput.requestEnvelope.request.intent.slots.letter.value;
+        const letterSlot = resolveSlot(letterSlotRaw);
 
         
         const speechText = 'Olá mundo!';
