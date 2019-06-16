@@ -11,8 +11,8 @@ const persistenceAdapter = new DynamoDbPersistenceAdapter({
 const MAX_LIVES = 5;
 const WORDS = [
     'ventilador',
-    'parede',
-    'figado',
+    //'parede',
+    //'figado',
 ];
 
 function resolveSlot(slot) {
