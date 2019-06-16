@@ -93,7 +93,8 @@ const ErrorHandler = {
     },
     handle(handlerInput, error) {
         console.log(`~~~~ Error handled: ${error.message}`);
-        const speechText = `Sorry, I couldn't understand what you said. Please try again.`;
+        // const speechText = `Sorry, I couldn't understand what you said. Please try again.`;
+        const speechText = `Desculpe, eu não entendi o que você disse. Por favor tente novamente.`;
 
         return handlerInput.responseBuilder
             .speak(speechText)
