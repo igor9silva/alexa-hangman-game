@@ -81,13 +81,15 @@ const SuggestLetterIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'SuggestLetterIntent';
     },
     
-    handle(handlerInput) {
+    async handle(handlerInput) {
         
         const request = handlerInput.requestEnvelope.request;
         const slots = request.intent.slots;
         const letter = slots.letter.value || '';
 
         let speechText = '';
+        
+        const attributes = await handlerInput.attributesManager.getPersistentAttributes();
 
         if (LETTERS.includes(letter)) {
             // TODO: validate the letter
