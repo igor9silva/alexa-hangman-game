@@ -59,14 +59,14 @@ const LaunchRequestHandler = {
             `Chute uma letra.`,
         ];
         
-        const attributes = await handlerInput.attributesManager.getPersistentAttributes();
+        // const attributes = await handlerInput.attributesManager.getPersistentAttributes();
 
-        // create initial attributes
-        attributes.word = 'ventilador'; // TODO: shuffle a word
-        attributes.triedLetters = ['e', 'n', 'i', 'l', 'a']; // TODO: clear it
+        // // create initial attributes
+        // attributes.word = 'ventilador'; // TODO: shuffle a word
+        // attributes.triedLetters = ['e', 'n', 'i', 'l', 'a']; // TODO: clear it
 
-        handlerInput.attributesManager.setPersistentAttributes(attributes);
-        handlerInput.attributesManager.savePersistentAttributes();
+        // handlerInput.attributesManager.setPersistentAttributes(attributes);
+        // handlerInput.attributesManager.savePersistentAttributes();
         
         return handlerInput.responseBuilder
                 .speak(sentences.join(' '))
