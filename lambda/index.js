@@ -50,7 +50,8 @@ const GetStatusIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'GetStatusIntent';
     },
     handle(handlerInput) {
-        const speechText = 'Você ainda tem 3 vidas. Lembrando: a palavra possui 7 letras.';
+        // ventilador
+        const speechText = 'Vou listar os espaços: vazio, e, n, vazio, i, l, a, vazio, vazio, vazio. A palavra possui 10 letras. Você ainda tem 3 vidas.';
         return handlerInput.responseBuilder
             .speak(speechText)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
