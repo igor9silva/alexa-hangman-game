@@ -53,14 +53,21 @@ const LaunchRequestHandler = {
         
         // TODO: implement
         
-        const speechText = `Olá, você está no Jogo da Forca! Já sorteei uma palavra e o jogo começou! A palavra possui 10 letras. Você tem ${INITIAL_LIVES} vidas. Chute uma letra.`;
+        const sentences = [
+            `Olá, você está no Jogo da Forca!`,
+            `Já sorteei uma palavra e o jogo começou!`,
+            `A palavra possui 10 letras.`,
+            `Você tem ${INITIAL_LIVES} vidas.`,
+            `Chute uma letra.`,
+        ];
+        
         const attributes = await handlerInput.attributesManager.getPersistentAttributes();
         
         attributes.word = 'ventilador';
         attributes.triedLetters = ['e', 'n', 'i', 'l', 'a'];
         
         return handlerInput.responseBuilder
-                .speak(speechText)
+                .speak(sentences.join(' '))
                 .getResponse();
     }
 };
