@@ -37,7 +37,7 @@ const SuggestLetterIntentHandler = {
         
         console.log('Letter slot: ' + letterSlotRaw + ' (raw) :' + letterSlot + ' (parsed)');
 
-        const speechText = 'Você chutou ' + letterSlot + ', mas errou! Tente outra.';
+        const speechText = 'Você chutou ' + letterSlotRaw + ', mas errou! Tente outra.';
         return handlerInput.responseBuilder
             .speak(speechText)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
