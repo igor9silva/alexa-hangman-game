@@ -6,7 +6,7 @@ const persistenceAdapter = new DynamoDbPersistenceAdapter({
   createTable: true
 });
 
-const MAX_LIVES = 5;
+const INITIAL_LIVES = 5;
 
 const WORDS = [
     'ventilador',
@@ -53,7 +53,7 @@ const LaunchRequestHandler = {
         
         // TODO: implement
         
-        const speechText = `Olá, você está no Jogo da Forca! Já sorteei uma palavra e o jogo começou! A palavra possui 10 letras. Você tem 5 vidas. Chute uma letra.`;
+        const speechText = `Olá, você está no Jogo da Forca! Já sorteei uma palavra e o jogo começou! A palavra possui 10 letras. Você tem ${INITIAL_LIVES} vidas. Chute uma letra.`;
         const attributes = await handlerInput.attributesManager.getPersistentAttributes();
         
         attributes.word = 'ventilador';
