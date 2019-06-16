@@ -23,6 +23,11 @@ const SuggestLetterIntentHandler = {
     },
     handle(handlerInput) {
         // handlerInput.requestEnvelope.request.
+        
+        const letterSlowRaw = handlerInput.requestEnvelope.request.intent.slots.letter.value;
+        // const letterSlotRaw = this.event.request.intent.slots.letter.value;
+
+        
         const speechText = 'Olá mundo!';
         return handlerInput.responseBuilder
             .speak(speechText)
