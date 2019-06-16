@@ -22,6 +22,7 @@ const SuggestLetterIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'SuggestLetterIntent';
     },
     handle(handlerInput) {
+        // handlerInput.requestEnvelope.request.
         const speechText = 'Olá mundo!';
         return handlerInput.responseBuilder
             .speak(speechText)
