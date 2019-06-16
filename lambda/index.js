@@ -75,7 +75,8 @@ const IntentReflectorHandler = {
     },
     handle(handlerInput) {
         const intentName = handlerInput.requestEnvelope.request.intent.name;
-        const speechText = `You just triggered ${intentName}`;
+        // const speechText = `You just triggered ${intentName}`;
+        const speechText = `You você invocou ${intentName}`;
 
         return handlerInput.responseBuilder
             .speak(speechText)
