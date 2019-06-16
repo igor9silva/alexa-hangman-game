@@ -84,8 +84,10 @@ const SuggestLetterIntentHandler = {
     handle(handlerInput) {
         
         // TODO: implement
-
-        const letter = handlerInput.requestEnvelope.request.intent.slots.letter.value || '';
+        
+        const request = handlerInput.requestEnvelope.request;
+        const slots = request.intent.slots;
+        const letter = slots.letter.value || '';
         
         let speechText = '';
         
