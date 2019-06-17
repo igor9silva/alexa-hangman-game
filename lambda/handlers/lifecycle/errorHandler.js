@@ -16,7 +16,7 @@ module.exports = {
 
         console.log(`~~~~ Error handled: ${error.message}`); // you can see those on CloudWatch
 
-        const speechText = `Desculpe, eu não entendi o que você disse. Por favor tente novamente.`;
+        const speechText = 'Sorry, I didn\'t understand what you\'ve said. Could you please repeat?';
 
         return handlerInput.responseBuilder
                 .speak(speechText)
