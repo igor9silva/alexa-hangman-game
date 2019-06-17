@@ -1,5 +1,5 @@
 
-// Alexa Skill Kit SDK
+// Alexa Skill Kit
 const Alexa = require('ask-sdk-core');
 
 // TODO: abstract text messages (+ i18n)
