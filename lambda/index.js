@@ -92,7 +92,7 @@ const SuggestLetterIntentHandler = {
 
         let speechText = '';
         
-        const attributes = await handlerInput.attributesManager.getPersistentAttributes();
+        const attributes = await handlerInput.attributesManager.getSessionAttributes();
         
         speechText = `A palavra é ${attributes.word}. Você já tentou as letras: ${attributes.triedLetters.join(', ')}`;
 
