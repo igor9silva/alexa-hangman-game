@@ -1,6 +1,9 @@
 
 // Constants
-const { WORDS } = require('./config');
+const {
+    INITIAL_LIVES,
+    WORDS,
+} = require('./config');
 
 const LaunchRequestHandler = {
     
