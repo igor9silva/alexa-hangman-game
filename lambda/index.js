@@ -140,9 +140,9 @@ const GetStatusIntentHandler = {
         // TODO: implement
 
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
-        
+
         const speechText = `A palavra é ${attributes.word}. Você já tentou as letras: ${attributes.triedLetters.join(', ')}`;
-        
+
         // const speechText = `Vou listar os espaços: vazio, e, n, vazio, i, l, a, vazio, vazio, vazio. A palavra possui 10 letras. Você ainda tem 3 vidas.`;
 
         return handlerInput.responseBuilder
