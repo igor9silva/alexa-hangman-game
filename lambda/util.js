@@ -33,7 +33,13 @@ function parseLetter(value) {
     return (value || '').toUpperCase().replace('.', '');
 }
 
+/// surround string with paragragh tag <p>
+function p(text) {
+    return `<p>${text}</p>\n`
+}
+
 // export functions
 module.exports.getS3PreSignedUrl = getS3PreSignedUrl;
 module.exports.randomIndex = randomIndex;
 module.exports.parseLetter = parseLetter;
+module.exports.p = p;
