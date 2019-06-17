@@ -4,13 +4,6 @@ const Alexa = require('ask-sdk-core');
 
 // TODO: abstract text messages (+ i18n)
 
-const {
-    HelpIntentHandler,
-    CancelAndStopIntentHandler,
-    SessionEndedRequestHandler,
-    IntentReflectorHandler,
-    ErrorHandler,
-} = require('./handlers/defaultHandlers');
 
 const HelpIntentHandler = require('./handlers/helpIntentHandler');
 const CancelAndStopIntentHandler = require('./handlers/cancelAndStopIntentHandler');
