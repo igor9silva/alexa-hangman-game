@@ -154,7 +154,7 @@ const SuggestLetterIntentHandler = {
             speechText += p(`Falta 1 letra.`);
         } else {
             return speak(`Parabéns, você ganhou! A palavra é ${word}.`, true);
-        } 
+        }
 
         // say life count (or tell user it've lost)
         if (lifeCount > 0) {
