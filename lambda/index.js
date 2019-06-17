@@ -5,10 +5,10 @@ const Alexa = require('ask-sdk-core');
 // TODO: abstract text messages (+ i18n)
 
 // Skill Lifecycle
-const ErrorHandler = require('./handlers/errorHandler');
-const IntentReflectorHandler = require('./handlers/intentReflectorHandler');
-const CancelAndStopIntentHandler = require('./handlers/cancelAndStopIntentHandler');
-const SessionEndedRequestHandler = require('./handlers/sessionEndedRequestHandler');
+const ErrorHandler = require('./handlers/lifecycle/errorHandler');
+const IntentReflectorHandler = require('./handlers/lifecycle/intentReflectorHandler');
+const CancelAndStopIntentHandler = require('./handlers/lifecycle/cancelAndStopIntentHandler');
+const SessionEndedRequestHandler = require('./handlers/lifecycle/sessionEndedRequestHandler');
 
 // Main User Interactions
 const HelpIntentHandler = require('./handlers/helpIntentHandler');
