@@ -52,7 +52,7 @@ module.exports.localizedMessage = function localizedMessage(key, locale) {
     return MESSAGES[language][key];
 }
 
-module.exports.localizedRandomeWord = function localizedRandomeWord(locale) {
+module.exports.localizedRandomWord = function localizedRandomeWord(locale) {
 
     if (!localeIsValid(locale)) {
         throw "LocaleNotSupported";
