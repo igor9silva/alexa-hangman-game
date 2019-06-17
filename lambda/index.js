@@ -110,7 +110,7 @@ const SuggestLetterIntentHandler = {
                 speechText += p(`Restam ${lifeCount} vidas.`);
 
                 if (lifeCount === 0) {
-                    speechText = 'Acabaram suas vidas, você perdeu!';
+                    speechText = p('Acabaram suas vidas, você perdeu!');
                     ended = true;
                 }
 
