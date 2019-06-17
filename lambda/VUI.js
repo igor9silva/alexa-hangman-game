@@ -29,6 +29,9 @@ module.exports.MESSAGES = {
         'You have {0} lives left.': 'You have {0} lives left.',
         'You have 1 life left.': 'You have 1 life left.',
         'You\'ve lost, there are no lives left! The word was {0}.': 'You\'ve lost, there are no lives left! The word was {0}.',
+        
+        // help intent handler
+        'Say any letter, ask how you\'re going, or quit! Which one will it be?': 'Say any letter, ask how you\'re going, or quit! Which one will it be?',
     },
     'pt': {
 
@@ -59,6 +62,9 @@ module.exports.MESSAGES = {
         'You have {0} lives left.': 'Restam {0} vidas.',
         'You have 1 life left.': 'Resta 1 vida.',
         'You\'ve lost, there are no lives left! The word was {0}.': 'Acabaram suas vidas, você perdeu! A palavra era {0}.',
+        
+        // help intent handler
+        'Say any letter, ask how you\'re going, or quit! Which one will it be?': 'Diga uma letra, pergunte como está o jogo, ou desista! O que deseja?',
     },
 }
 
