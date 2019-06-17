@@ -1,4 +1,7 @@
 
+// i18n
+const { messageLocalizer } = require('../i18n');
+
 module.exports = {
 
     canHandle(handlerInput) {
