@@ -30,6 +30,10 @@ module.exports.MESSAGES = {
         
         // help intent handler
         'Say any letter, ask how you\'re going, or quit! Which one will it be?': 'Say any letter, ask how you\'re going, or quit! Which one will it be?',
+        
+        // get status intent handler
+        'I\'ll speak case by case:': 'I\'ll speak case by case:',
+        'empty': 'empty',
     },
     'pt': {
         
@@ -63,9 +67,8 @@ module.exports.MESSAGES = {
         'Say any letter, ask how you\'re going, or quit! Which one will it be?': 'Diga uma letra, pergunte como está o jogo, ou desista! O que deseja?',
         
         // get status intent handler
-        `Vou falar casa por casa ${triedLetters}:`
-        'vazio'
-        
+        'I\'ll speak case by case:': 'Vou falar casa por casa:',
+        'empty': 'vazio',
         
     },
 }
