@@ -112,7 +112,6 @@ const SuggestLetterIntentHandler = {
             speechText = `A letra que você chutou não é válida. Tente outra.`;
         }
 
-
         return handlerInput.responseBuilder
                 .speak(speechText)
                 .reprompt('Diga alguma letra...')
