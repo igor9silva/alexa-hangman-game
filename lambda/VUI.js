@@ -1,5 +1,12 @@
 
-const { SUPPORTED_LANGUAGES } = require('./config');
+// Constants
+const { 
+    WORDS,
+    SUPPORTED_LANGUAGES
+} = require('./config');
+
+// Utils
+const { randomIndex } = require('./util');
 
 const MESSAGES = {
     'en' : {
@@ -55,5 +62,5 @@ module.exports.localizedMessage = function localizedMessage(key, locale) {
 }
 
 module.exports.localizedRandomeWord = function localizedRandomeWord(locale) {
-    
+    const chosenWord = WORDS[randomIndex(0, WORDS.length)];
 }
