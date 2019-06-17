@@ -81,14 +81,14 @@ const SuggestLetterIntentHandler = {
         
         const request = handlerInput.requestEnvelope.request;
         const slots = request.intent.slots;
-        const letter = (slots.letter.value || '').toUpperCase();
+        const letter = parseLetter(slots.letter.value);
 
         let speechText = '';
         let ended = false;
         
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
         
-        return handlerInput.responseBuilder.speak(`Você chutou a letra ${letter} ....`).getResponse();
+        return handlerInput.responseBuilder.speak(`Você chutou a letra ${letter}`).getResponse();
 
         if (LETTERS.includes(letter)) {
             
@@ -248,6 +248,10 @@ function randomIndex(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function parseLetter(value) {
+    return (value || '').toUpperCase().replace('.', '');
 }
 
 // ACTUAL GAME LOGIC
