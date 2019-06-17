@@ -41,7 +41,7 @@ function localeIsValid(locale) {
     return true;
 }
 
-module.exports.localizedMessage = function localizedMessage(key, locale) {
+module.exports.localizedMessage = function localizedMessage(locale, key, ...params) {
 
     if (!localeIsValid(locale)) {
         throw "LocaleNotSupported";
