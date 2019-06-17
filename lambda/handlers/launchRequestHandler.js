@@ -30,15 +30,6 @@ module.exports = {
 
         // save attributes
         handlerInput.attributesManager.setSessionAttributes(attributes);
-        
-        'Hello, you are in the Hangman Game!': `Olá, você está no Jogo da Forca!`,
-        'The game has started!': `O jogo já começou!`,
-        'The word has {0} letters.': `A palavra possui {0} letras.`,
-        'You have {0} {1}.': `Você tem {0} {1}.`,
-        'Guess a letter.': 'Chute uma letra.',
-        'Guess any letter...': 'Diga alguma letra...',
-        
-        const lifeCountStr = localizedMessage(locale, )
 
         // say hello, the chosen word length and how
         // many lives the user have
