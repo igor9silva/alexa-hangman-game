@@ -18,10 +18,6 @@ module.exports.MESSAGES = {
 }
 
 module.exports.WORDS = {
-    
-}
-
-module.exports.WORDS = {
     'pt': [
         'ventilador',
         'parede',
