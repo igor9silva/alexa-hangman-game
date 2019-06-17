@@ -1,29 +1,6 @@
 const Alexa = require('ask-sdk-core');
 
 // TODO: abstract text messages (+ i18n)
-
-// Constants
-const {
-    INITIAL_LIVES,
-    WORDS,
-    VALID_LETTERS
-} = require('./config');
-
-// Utils
-const {
-    randomIndex,
-    parseLetter,
-    p,
-} = require('./util');
-
-// Game Logic
-const {
-    hasBeenGuessed,
-    countHits,
-    countLives,
-    countMissingLetters,
-} = require('./game');
-
 // Intent Handlers
 const {
     HelpIntentHandler,
