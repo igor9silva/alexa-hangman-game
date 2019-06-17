@@ -35,6 +35,9 @@ module.exports.MESSAGES = {
         // get status intent handler
         'I\'ll speak case by case:': 'I\'ll speak case by case:',
         'empty': 'empty',
+        
+        // intent reflector handler
+        'You\'ve invoked {0}': 'You\'ve invoked {0}',
     },
 
     'pt': {
@@ -73,7 +76,7 @@ module.exports.MESSAGES = {
         'empty': 'vazio',
         
         // intent reflector handler
-        'You você invocou {0}': 'You\'ve invoked {0}',
+        'You\'ve invoked {0}': 'You você invocou {0}',
     },
 }
 
