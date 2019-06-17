@@ -1,6 +1,7 @@
 const Alexa = require('ask-sdk-core');
 
 // TODO: abstract text messages (+ i18n)
+
 // Intent Handlers
 const {
     HelpIntentHandler,
