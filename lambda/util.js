@@ -15,7 +15,8 @@ module.exports.getS3PreSignedUrl = function getS3PreSignedUrl(s3ObjectKey) {
         Expires: 60*1 // the Expires is capped for 1 minute
     });
 
-    console.log(`Util.s3PreSignedUrl: ${s3ObjectKey} URL ${s3PreSignedUrl}`);
+    console.log(`Util.s3PreSignedUrl: ${s3ObjectKey} URL ${s3PreSignedUrl}`); // you can see those on CloudWatch
+
     return s3PreSignedUrl;
 
 }
