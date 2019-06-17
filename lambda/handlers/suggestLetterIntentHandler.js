@@ -113,11 +113,11 @@ module.exports = {
         
         // say missing count (or tell user it've won)
         if (missingCount > 1) {
-            speechText += p(l7d(`Faltam ${missingCount} letras.`));
+            speechText += p(l7d('There is {0} missing letters.', missingCount));
         } else if (missingCount === 1) {
-            speechText += p(l7d(`Falta 1 letra.`));
+            speechText += p(l7d('There is 1 missing letter.'));
         } else {
-            return speak(l7d(`Parabéns, você ganhou! A palavra é ${word}.`), true);
+            return speak(l7d('Congratulations, you\'ve won! The word is {0}.', word), true);
         }
 
         // say life count (or tell user it've lost)
