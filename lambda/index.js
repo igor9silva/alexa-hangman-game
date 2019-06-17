@@ -156,7 +156,7 @@ const SuggestLetterIntentHandler = {
             return speak(`Acabaram suas vidas, você perdeu!`, true);
         }
         
-        speak(speechText);
+        return speak(speechText);
     }
 };
 
