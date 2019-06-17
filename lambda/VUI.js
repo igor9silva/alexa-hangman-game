@@ -42,7 +42,7 @@ function localeIsValid(locale) {
     if (!regions.includes(region)) {
         return false;
     }
-    
+
     return true;
 }
 
