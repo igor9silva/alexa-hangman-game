@@ -18,6 +18,7 @@ module.exports = {
         
         // get request locale
         const locale = handlerInput.requestEnvelope.request.locale;
+        const locMsg = messageLocalizer(locale);
 
         // shuffle a word
         const chosenWord = localizedRandomWord(locale);
