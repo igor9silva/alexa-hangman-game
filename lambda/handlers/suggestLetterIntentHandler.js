@@ -122,9 +122,9 @@ module.exports = {
 
         // say life count (or tell user it've lost)
         if (lifeCount > 1) {
-            speechText += p(l7d(`Restam ${lifeCount} vidas.`));
+            speechText += p(l7d('You have {0} lives left.', lifeCount));
         } else if (lifeCount === 1) {
-            speechText += p(l7d(`Resta ${lifeCount} vida.`));
+            speechText += p(l7d('You have 1 life left.'));
         } else {
             return speak(l7d(`Acabaram suas vidas, você perdeu! A palavra era  ${word}.`), true);
         }
