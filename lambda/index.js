@@ -201,6 +201,7 @@ const GetStatusIntentHandler = {
         }
 
         // spell out letters (say "empty" if hasn't been guessed)
+        speechText += p(`Vou falar casa por casa:`);
         for (let letter in word) {
             if (hasBeenGuessed(letter, triedLetters)) {
                 speechText += p(letter);
