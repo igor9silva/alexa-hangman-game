@@ -5,7 +5,10 @@ const INITIAL_LIVES = 5;
 const WORDS = [
     'ventilador',
     'parede',
-    'figado',
+    'porta',
+    'celular',
+    'rato',
+    'macarrao',
 ];
 
 const LETTERS = [
