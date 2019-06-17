@@ -16,3 +16,16 @@ module.exports.getS3PreSignedUrl = function getS3PreSignedUrl(s3ObjectKey) {
     return s3PreSignedUrl;
 
 }
+
+/// get a random int
+module.exports.randomIndex = function randomIndex(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+/// parse letter slot
+/// uppercase it and remove ending dot (.)
+module.exports.parseLetter = function parseLetter(value) {
+    return (value || '').toUpperCase().replace('.', '');
+}
