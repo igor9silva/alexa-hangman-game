@@ -32,14 +32,14 @@ module.exports = {
         const l7d = messageLocalizer(locale);
  
         let speechText = '';
-        
+
         // say life count
         if (lifeCount > 1) {
             speechText += p(l7d('You have {0} lives left.', lifeCount));
         } else if (lifeCount === 1) {
             speechText += p(l7d('You have 1 life left.'));
         }
-        
+
         // say missing count
         if (missingCount > 1) {
             speechText += p(l7d('There is {0} missing letters.', missingCount));
