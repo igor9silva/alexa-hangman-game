@@ -1,5 +1,6 @@
 
 module.exports.MESSAGES = {
+
     'en' : {
         
         // shared
@@ -35,6 +36,7 @@ module.exports.MESSAGES = {
         'I\'ll speak case by case:': 'I\'ll speak case by case:',
         'empty': 'empty',
     },
+
     'pt': {
         
         // shared
