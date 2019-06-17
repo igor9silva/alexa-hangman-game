@@ -7,6 +7,7 @@ module.exports.MESSAGES = {
         'There is 1 missing letter.': 'There is 1 missing letter.',
         'You have {0} lives left.': 'You have {0} lives left.',
         'You have 1 life left.': 'You have 1 life left.',
+        'Say any letter...': 'Say any letter...',
         
         // launch request handler
         'Hello, you are in the Hangman Game!': `Hello, you are in the Hangman Game!`,
@@ -17,7 +18,6 @@ module.exports.MESSAGES = {
         'Guess any letter...': 'Guess any letter...',
         
         // suggest letter intent handler
-        'Say any letter...': 'Say any letter...',
         'The letter you\'ve guessed isn\'t valid.': 'The letter you\'ve guessed isn\'t valid.',
         'Try another.': 'Try another.',
         'You\'ve already guessed the letter {0}': 'You\'ve already guessed the letter {0}',
@@ -38,6 +38,7 @@ module.exports.MESSAGES = {
         'There is 1 missing letter.': 'Falta 1 letra.',
         'You have {0} lives left.': 'Restam {0} vidas.',
         'You have 1 life left.': 'Resta 1 vida.',
+        'Say any letter...': 'Diga alguma letra...',
 
         // launch request handler
         'Hello, you are in the Hangman Game!': `Olá, você está no Jogo da Forca!`,
@@ -48,7 +49,6 @@ module.exports.MESSAGES = {
         'Guess any letter...': 'Diga alguma letra...',
         
         // suggest letter intent handler
-        'Say any letter...': 'Diga alguma letra...',
         'The letter you\'ve guessed isn\'t valid.': 'A letra que você chutou não é válida.',
         'Try another.': 'Tente outra.',
         'You\'ve already guessed the letter {0}': 'Você já chutou a letra {0}',
@@ -61,6 +61,12 @@ module.exports.MESSAGES = {
         
         // help intent handler
         'Say any letter, ask how you\'re going, or quit! Which one will it be?': 'Diga uma letra, pergunte como está o jogo, ou desista! O que deseja?',
+        
+        // get status intent handler
+        `Vou falar casa por casa ${triedLetters}:`
+        'vazio'
+        
+        
     },
 }
 
