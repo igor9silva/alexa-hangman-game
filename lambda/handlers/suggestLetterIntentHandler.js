@@ -31,6 +31,9 @@ module.exports = {
         const request = handlerInput.requestEnvelope.request;
         const slots = request.intent.slots;
         const letter = parseLetter(slots.letter.value);
+        
+        // get request locale
+        const locale = request.locale;
 
         let speechText = '';
         let ended = false;
