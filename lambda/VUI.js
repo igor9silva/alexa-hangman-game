@@ -94,6 +94,21 @@ module.exports.MESSAGES = {
 
 module.exports.WORDS = {
     'en': [
+        'society',
+        'agile',
+        'curriculum',
+        'cry',
+        'fork',
+        'shy',
+        'attack',
+        'rocket',
+        'straight',
+        'federation',
+        'behead',
+        'passive',
+        'guilt',
+        'wear',
+        'eavesdrop',
     ],
     'pt': [
         'ventilador',
@@ -102,5 +117,14 @@ module.exports.WORDS = {
         'celular',
         'rato',
         'macarrao',
+        'vida',
+        'jardim',
+        'biblioteca',
+        'cintura',
+        'gaiola',
+        'gelatina',
+        'pesquisa',
+        'estrada',
+        'abacaxi',
     ],
 }
