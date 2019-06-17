@@ -4,7 +4,6 @@ const Alexa = require('ask-sdk-core');
 
 // TODO: abstract text messages (+ i18n)
 
-
 // Skill Lifecycle
 const ErrorHandler = require('./handlers/errorHandler');
 const IntentReflectorHandler = require('./handlers/intentReflectorHandler');
