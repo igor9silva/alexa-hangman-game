@@ -264,8 +264,8 @@ function parseLetter(value) {
 }
 
 /// surround string with paragragh tag <p>
-function p() {
-    
+function p(text) {
+    return `<p>${text}</p>`
 }
 
 // ACTUAL GAME LOGIC
