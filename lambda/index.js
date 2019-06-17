@@ -259,9 +259,11 @@ function lifeCount(attributes) {
     
     const { triedLetters, word } = attributes;
     
-    return triedLetters.reduce((count, letter) => {
+    const failedAttempts = triedLetters.reduce((count, letter) => {
         return count + (word.includes(letter) ? 0 : 1);
     }, 0);
+    
+    return INITIAL_LIVES - failedAttempts;
 }
 
 // This handler acts as the entry point for your skill, routing all request and response
