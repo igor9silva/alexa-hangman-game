@@ -5,12 +5,14 @@ const Alexa = require('ask-sdk-core');
 // TODO: abstract text messages (+ i18n)
 
 
-const HelpIntentHandler = require('./handlers/helpIntentHandler');
+
 const CancelAndStopIntentHandler = require('./handlers/cancelAndStopIntentHandler');
 const SessionEndedRequestHandler = require('./handlers/sessionEndedRequestHandler');
 const ErrorHandler = require('./handlers/errorHandler');
 const IntentReflectorHandler = require('./handlers/intentReflectorHandler');
 
+// Main User Interactions
+const HelpIntentHandler = require('./handlers/helpIntentHandler');
 const LaunchRequestHandler = require('./handlers/launchRequestHandler');
 const GetStatusIntentHandler = require('./handlers/GetStatusIntentHandler');
 const SuggestLetterIntentHandler = require('./handlers/suggestLetterIntentHandler');
