@@ -1,6 +1,6 @@
 
 // Constants
-const { VALID_LETTERS } = require('./config');
+const { VALID_LETTERS } = require('../config');
 
 // Utils
 const {
