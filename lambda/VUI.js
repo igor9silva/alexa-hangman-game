@@ -1,12 +1,4 @@
 
-//             `Chute uma letra.`,
-//         ];
-
-//         return handlerInput.responseBuilder
-//                 .speak(sentences.join(' '))
-//                 .reprompt('Diga alguma letra...')
-
-
 module.exports.MESSAGES = {
     'en' : {
         
@@ -18,7 +10,7 @@ module.exports.MESSAGES = {
         'Hello, you are in the Hangman Game!': `Hello, you are in the Hangman Game!`,
         'The game has started!': `The game has started!`,
         'The word has {0} letters.': `The word has {0} letters.`,
-        'You have {0} {1}.': `You have {0} {1}.`,
+        'You have {0} lives.': `You have {0} lives.`,
         'Guess a letter.': 'Guess a letter.',
         'Guess any letter...': 'Guess any letter...',
     },
@@ -32,7 +24,7 @@ module.exports.MESSAGES = {
         'Hello, you are in the Hangman Game!': `Olá, você está no Jogo da Forca!`,
         'The game has started!': `O jogo já começou!`,
         'The word has {0} letters.': `A palavra possui {0} letras.`,
-        'You have {0} {1}.': `Você tem {0} {1}.`,
+        'You have {0} lives.': `Você tem {0} vidas.`,
         'Guess a letter.': 'Chute uma letra.',
         'Guess any letter...': 'Diga alguma letra...',
     },
