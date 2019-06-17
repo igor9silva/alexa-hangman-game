@@ -14,7 +14,7 @@ const {
     countHits,
     countLives,
     countMissingLetters,
-} = require('./game');
+} = require('../game');
 
 module.exports = {
     
