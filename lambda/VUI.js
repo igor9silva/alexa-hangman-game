@@ -46,6 +46,13 @@ function localeIsValid(locale) {
     return true;
 }
 
-function localizedMessage(key) {
+function localizedMessage(key, locale) {
     
+    if (!localeIsValid(locale)) {
+        throw "LocaleNotSupported";
+    }
+    
+    const [language, region] = locale.split('_');
+    
+    return MESSAGES[language][key];
 }
