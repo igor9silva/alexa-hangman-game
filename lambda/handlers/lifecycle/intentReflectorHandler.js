@@ -1,4 +1,7 @@
 
+// i18n
+const { messageLocalizer } = require('../i18n');
+
 module.exports = {
 
     canHandle(handlerInput) {
@@ -8,6 +11,10 @@ module.exports = {
     handle(handlerInput) {
 
         const intentName = handlerInput.requestEnvelope.request.intent.name;
+        
+        // get request locale
+        const locale = handlerInput.requestEnvelope.request.locale;
+        const l7d = messageLocalizer(locale);
 
         const speechText = `You você invocou ${intentName}`;
 
