@@ -1,5 +1,5 @@
 
-const LANGUAGES = {
+const SUPPORTED_LANGUAGES = {
     'en': ['US', 'UK', 'AU', 'CA', 'IN'],
     'pt': ['BR', 'PT'],
 };
@@ -33,13 +33,13 @@ function localeIsValid(locale) {
         return false;
     }
 
-    if (!Object.keys(LANGUAGES).includes(language.toLowerCase())) {
+    if (!Object.keys(SUPPORTED_LANGUAGES).includes(language.toLowerCase())) {
         return false;
     }
 
-    const regions = LANGUAGES[language];
+    const regions = SUPPORTED_LANGUAGES[language];
 
-    if (!regions.includes(region)) {
+    if (!regions.includes(region.toUpperCase())) {
         return false;
     }
 
