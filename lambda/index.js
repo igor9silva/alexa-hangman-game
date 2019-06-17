@@ -69,8 +69,6 @@ const LaunchRequestHandler = {
             `Chute uma letra.`,
         ];
 
-        
-
         return handlerInput.responseBuilder
                 .speak(sentences.join(' '))
                 .reprompt('Diga alguma letra...')
