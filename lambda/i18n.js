@@ -59,6 +59,7 @@ module.exports.localizedRandomeWord = function localizedRandomeWord(locale) {
     }
     
     const [language] = locale.split('_');
+    const words = WORDS[language];
 
-    const chosenWord = WORDS[language][randomIndex(0, WORDS.length)];
+    return words[randomIndex(0, words.length)];
 }
