@@ -9,7 +9,7 @@ const {
 const { randomIndex } = require('./util');
 
 module.exports = {
-    
+
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
