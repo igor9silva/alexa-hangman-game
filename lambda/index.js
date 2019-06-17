@@ -2,7 +2,8 @@
 // Alexa Skill Kit
 const Alexa = require('ask-sdk-core');
 
-// TODO: abstract text messages (+ i18n)
+// TODO: add more words
+// TODO: add word categories
 
 // Skill Lifecycle
 const ErrorHandler = require('./handlers/lifecycle/errorHandler');
