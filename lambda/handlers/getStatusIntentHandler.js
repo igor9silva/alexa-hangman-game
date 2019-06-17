@@ -1,4 +1,10 @@
 
+// Game Logic
+const {
+    countLives,
+    countMissingLetters,
+} = require('./game');
+
 module.exports = {
     
     canHandle(handlerInput) {
