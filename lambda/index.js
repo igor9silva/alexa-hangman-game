@@ -12,6 +12,12 @@ const {
     ErrorHandler,
 } = require('./handlers/defaultHandlers');
 
+const HelpIntentHandler = require('./handlers/helpIntentHandler');
+const CancelAndStopIntentHandler = require('./handlers/helpIntentHandler');
+const SessionEndedRequestHandler = require('./handlers/helpIntentHandler');
+const ErrorHandler = require('./handlers/helpIntentHandler');
+const IntentReflectorHandler = require('./handlers/intentReflectorHandler');
+
 const LaunchRequestHandler = require('./handlers/launchRequestHandler');
 const GetStatusIntentHandler = require('./handlers/GetStatusIntentHandler');
 const SuggestLetterIntentHandler = require('./handlers/suggestLetterIntentHandler');
