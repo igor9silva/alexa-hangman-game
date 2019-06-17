@@ -338,6 +338,7 @@ function p(text) {
 /// boolean
 /// return if letter has already been guessed
 function hasBeenGuessed(letter, triedLetters) {
+    console.log('hasBeenGuessed:', hasBeenGuessed, letter, triedLetters, triedLetters.includes(letter))
     return triedLetters.includes(letter);
 }
 
