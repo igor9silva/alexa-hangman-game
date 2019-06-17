@@ -105,9 +105,9 @@ const SuggestLetterIntentHandler = {
                 const lifeCount = countLives(triedLetters, word);
 
                 // build speech
-                speechText += `Você chutou a letra ${letter}.`;
-                speechText += (hitCount > 0) ? `Acertou ${hitCount} posições.` : `Não acertou nada.`;
-                speechText += `Restam ${lifeCount} vidas.`;
+                speechText += p(`Você chutou a letra ${letter}.`);
+                speechText += p((hitCount > 0) ? `Acertou ${hitCount} posições.` : `Não acertou nada.`);
+                speechText += p(`Restam ${lifeCount} vidas.`);
 
                 if (lifeCount === 0) {
                     speechText = 'Acabaram suas vidas, você perdeu!';
