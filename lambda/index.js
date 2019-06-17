@@ -6,16 +6,16 @@ const Alexa = require('ask-sdk-core');
 // TODO: add word categories
 
 // Skill Lifecycle
-const ErrorHandler = require('./handlers/lifecycle/errorHandler');
-const IntentReflectorHandler = require('./handlers/lifecycle/intentReflectorHandler');
-const CancelAndStopIntentHandler = require('./handlers/lifecycle/cancelAndStopIntentHandler');
-const SessionEndedRequestHandler = require('./handlers/lifecycle/sessionEndedRequestHandler');
+// const ErrorHandler = require('./handlers/lifecycle/errorHandler');
+// const IntentReflectorHandler = require('./handlers/lifecycle/intentReflectorHandler');
+// const CancelAndStopIntentHandler = require('./handlers/lifecycle/cancelAndStopIntentHandler');
+// const SessionEndedRequestHandler = require('./handlers/lifecycle/sessionEndedRequestHandler');
 
 // Main User Interactions
-const HelpIntentHandler = require('./handlers/helpIntentHandler');
-const LaunchRequestHandler = require('./handlers/launchRequestHandler');
-const GetStatusIntentHandler = require('./handlers/getStatusIntentHandler');
-const SuggestLetterIntentHandler = require('./handlers/suggestLetterIntentHandler');
+// const HelpIntentHandler = require('./handlers/helpIntentHandler');
+// const LaunchRequestHandler = require('./handlers/launchRequestHandler');
+// const GetStatusIntentHandler = require('./handlers/getStatusIntentHandler');
+// const SuggestLetterIntentHandler = require('./handlers/suggestLetterIntentHandler');
 
 // This handler acts as the entry point for your skill, routing all request and response
 // payloads to the handlers above. Make sure any new handlers or interceptors you've
@@ -29,9 +29,9 @@ exports.handler = Alexa.SkillBuilders
         // HelpIntentHandler,
         // CancelAndStopIntentHandler,
         // SessionEndedRequestHandler,
-        IntentReflectorHandler, // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
+        // IntentReflectorHandler, // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
     )
     .addErrorHandlers(
-        ErrorHandler,
+        // ErrorHandler,
     )
     .lambda();
