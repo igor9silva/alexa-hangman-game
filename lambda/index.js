@@ -50,11 +50,13 @@ const LaunchRequestHandler = {
     },
     
     async handle(handlerInput) {
+        
+        const chosenWord = WORDS[0];
 
         const sentences = [
             `Olá, você está no Jogo da Forca!`,
             `Já sorteei uma palavra e o jogo começou!`,
-            `A palavra possui 10 letras.`,
+            `A palavra possui ${chosenWord.length} letras.`,
             `Você tem ${INITIAL_LIVES} vidas.`,
             `Chute uma letra.`,
         ];
