@@ -87,8 +87,6 @@ const SuggestLetterIntentHandler = {
         let ended = false;
         
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
-        
-        return handlerInput.responseBuilder.speak(`Você chutou a letra ${letter}`).getResponse();
 
         if (LETTERS.includes(letter)) {
             
