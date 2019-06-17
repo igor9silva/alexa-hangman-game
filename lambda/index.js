@@ -301,7 +301,7 @@ function countMissingLetters(word, triedLetters, letter) {
 
     // sum, for each letter, how many occurrencies of it there are
     return triedLetters.reduce((count, letter) => {
-        return count + (word.split(letter).length - 1);
+        return count + (countHits(letter, word));
     }, 0);
 }
 
