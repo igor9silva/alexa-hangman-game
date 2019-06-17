@@ -300,9 +300,11 @@ function countMissingLetters(word, triedLetters, letter) {
     triedLetters = triedLetters.concat(letter);
 
     // sum, for each letter, how many occurrencies of it there are
-    return triedLetters.reduce((count, letter) => {
+    const totalHitCount = triedLetters.reduce((count, letter) => {
         return count + (countHits(letter, word));
     }, 0);
+    
+    return word.length - hitCount;
 }
 
 // This handler acts as the entry point for your skill, routing all request and response
