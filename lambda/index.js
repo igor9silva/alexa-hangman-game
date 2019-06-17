@@ -157,8 +157,10 @@ const SuggestLetterIntentHandler = {
         }
 
         // say life count (or tell user it've lost)
-        if (lifeCount > 0) {
+        if (lifeCount > 1) {
             speechText += p(`Restam ${lifeCount} vidas.`);
+        } else if (lifeCount === 1) {
+            speechText += p(`Resta ${lifeCount} vida.`);
         } else {
             return speak(`Acabaram suas vidas, você perdeu!`, true);
         }
@@ -178,8 +180,18 @@ const GetStatusIntentHandler = {
         
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
         const { word, triedLetters } = attributes;
+        
+        const lifeCount = countLives(triedLetters, word);
+        const missingCount = countMissingLetters(word, triedLetters);
 
         let speechText = '';
+        
+        // say life count
+        if (lifeCount > 0) {
+            speechText += p(`Restam ${lifeCount} vidas.`);
+        } else {
+            return speak(`Acabaram suas vidas, você perdeu!`, true);
+        }
         
         // say missing count (or tell user it've won)
         if (missingCount > 1) {
@@ -188,12 +200,7 @@ const GetStatusIntentHandler = {
             speechText += p(`Falta 1 letra.`);
         }
 
-        // say life count (or tell user it've lost)
-        if (lifeCount > 0) {
-            speechText += p(`Restam ${lifeCount} vidas.`);
-        } else {
-            return speak(`Acabaram suas vidas, você perdeu!`, true);
-        }
+        
 
         // const speechText = `Vou listar os espaços: vazio, e, n, vazio, i, l, a, vazio, vazio, vazio. A palavra possui 10 letras. Você ainda tem 3 vidas.`;
 
