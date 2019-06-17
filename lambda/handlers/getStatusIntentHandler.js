@@ -9,6 +9,9 @@ const {
     countMissingLetters,
 } = require('../game');
 
+// i18n
+const { messageLocalizer } = require('../i18n');
+
 module.exports = {
     
     canHandle(handlerInput) {
@@ -23,14 +26,26 @@ module.exports = {
         
         const lifeCount = countLives(word, triedLetters);
         const missingCount = countMissingLetters(word, triedLetters);
+        
+        // get request locale
+        const locale = handlerInput.requestEnvelope.request.locale;
+        const l7d = messageLocalizer(locale);
  
         let speechText = '';
+        
+'There is {0} missing letters.'
+'There is 1 missing letter.'
+'You have {0} lives left.'
+'You have 1 life left.'
+'Say any letter...'
+'I\'ll speak case by case:'
+'empty'
         
         // say life count
         if (lifeCount > 1) {
             speechText += p(`Restam ${lifeCount} vidas.`);
         } else if (lifeCount === 1) {
-            speechText += p(`Resta ${lifeCount} vida.`);
+            speechText += p(`Resta 1 vida.`);
         }
         
         // say missing count
@@ -46,7 +61,7 @@ module.exports = {
             if (hasBeenGuessed(letter, triedLetters)) {
                 speechText += p(letter);
             } else {
-                speechText += p('vazio');
+                speechText += p(l7d('empty'));
             }
         }
 
