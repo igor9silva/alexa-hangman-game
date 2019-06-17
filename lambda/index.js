@@ -1,13 +1,20 @@
 const Alexa = require('ask-sdk-core');
 
+
 const { INITIAL_LIVES, WORDS, VALID_LETTERS } = require('./config');
+
+const {
+    randomIndex,
+    parseLetter,
+} = require('./util');
+
 const {
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler,
     IntentReflectorHandler,
     ErrorHandler,
-} = require('./handlers/defaultHandlers')
+} = require('./handlers/defaultHandlers');
 
 const LaunchRequestHandler = {
     
