@@ -81,15 +81,33 @@ const SuggestLetterIntentHandler = {
         
         const request = handlerInput.requestEnvelope.request;
         const slots = request.intent.slots;
-        const letter = slots.letter.value || '';
+        const letter = (slots.letter.value || '').toUpperCase();
 
         let speechText = '';
         
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
 
         if (LETTERS.includes(letter)) {
-            // TODO: validate the letter
-            speechText = `Você chutou ${letter.toUpperCase()}, mas errou! Tente outra.`;
+            
+            if (isLetterValid(letter, attributes)) {
+                
+                const hitCount = guessLetter(letter, attributes);
+                const lifeCount = lifeCount(attributes);
+                
+                speechText = `Você chutou a letra ${letter}`;
+                
+                if (hitCount > 0) {
+                    speechText += `, e acertou ${hitCount}.`;
+                } else {
+                    speechText += `, e não acertou nada.`;
+                }
+                
+                speechText += `Restam ${lifeCount} vidas.`;
+                
+            } else {
+                speechText = `Você já chutou a letra ${letter}. Tente outra.`;
+            }
+
         } else {
             speechText = `A letra que você chutou não é válida. Tente outra.`;
         }
@@ -112,7 +130,9 @@ const GetStatusIntentHandler = {
         
         // TODO: implement
         
-        const speechText = `Vou listar os espaços: vazio, e, n, vazio, i, l, a, vazio, vazio, vazio. A palavra possui 10 letras. Você ainda tem 3 vidas.`;
+        const speechText = `A palavra é ${attributes.word}. Você já tentou as letras: ${attributes.triedLetters.join(', ')}`;
+        
+        // const speechText = `Vou listar os espaços: vazio, e, n, vazio, i, l, a, vazio, vazio, vazio. A palavra possui 10 letras. Você ainda tem 3 vidas.`;
 
         return handlerInput.responseBuilder
                 .speak(speechText)
@@ -221,6 +241,22 @@ function randomIndex(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function isLetterValid(letter, attributes) {
+    // TODO: implement
+    // return if already guessed
+}
+
+function guessLetter(letter, attributes) {
+    // TODO: implement
+    // update session
+    // return hit count
+}
+
+function lifeCount(attributes) {
+    // TODO: implement
+    // return life count
 }
 
 // This handler acts as the entry point for your skill, routing all request and response
