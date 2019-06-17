@@ -135,15 +135,20 @@ const SuggestLetterIntentHandler = {
             speechText += p(`Não acertou nada.`);
         }
 
-        // say updated life count
-        speechText += p(`Restam ${lifeCount} vidas.`);
+        // say life count (or tell your it've lost)
+        if (lifeCount > 0) {
+            speechText += p(`Restam ${lifeCount} vidas.`);    
+        } else {
+            return speak(`Acabaram suas vidas, você perdeu!`);
+        }
+        
 
         // check if  won or lives ended
         if (missingCount === 0) {
             speechText = p(`Parabéns, você ganou! A palavra é ${word}.`);
             ended = true;
         } else if (lifeCount === 0) {
-            speechText = p(`Acabaram suas vidas, você perdeu!`);
+            speechText = p();
             ended = true;
         }
     }
