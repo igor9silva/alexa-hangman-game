@@ -18,7 +18,7 @@ function localeIsValid(locale) {
         return false;
     }
 
-    const [language, region] = locale.split('_');
+    const [language, region] = locale.split('-');
 
     if (language === undefined || language.length !== 2) {
         return false;
@@ -49,7 +49,7 @@ module.exports.messageLocalizer = function messageLocalizer(locale) {
             throw "LocaleNotSupported";
         }
 
-        const [language] = locale.split('_');
+        const [language] = locale.split('-');
 
         let value = MESSAGES[language][key];
 
@@ -66,7 +66,7 @@ module.exports.localizedRandomWord = function localizedRandomeWord(locale) {
         throw "LocaleNotSupported";
     }
     
-    const [language] = locale.split('_');
+    const [language] = locale.split('-');
     const words = WORDS[language];
 
     return words[randomIndex(0, words.length)];

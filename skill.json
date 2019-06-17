@@ -11,10 +11,10 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "name": "Forca"
+          "name": "The Hangman Game"
         },
         "pt-BR": {
-          "name": "Forca"
+          "name": "O Jogo da Forca"
         }
       }
     }
