@@ -301,10 +301,10 @@ function countLives(triedLetters, word) {
 /// return how many missing letters there are
 function countMissingLetters(word, triedLetters, letter) {
     
-    const { triedLetters, word } = attributes;
-    
+    triedLetters = triedLetters.concat(letter);
+
     const failedAttempts = triedLetters.reduce((count, letter) => {
-        return count + (word.includes(letter) ? 0 : 1);
+        return count + (word.split(letter).length - 1);
     }, 0);
 }
 
