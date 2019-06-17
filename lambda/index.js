@@ -13,7 +13,7 @@ const SessionEndedRequestHandler = require('./handlers/lifecycle/sessionEndedReq
 // Main User Interactions
 const HelpIntentHandler = require('./handlers/helpIntentHandler');
 const LaunchRequestHandler = require('./handlers/launchRequestHandler');
-const GetStatusIntentHandler = require('./handlers/GetStatusIntentHandler');
+const GetStatusIntentHandler = require('./handlers/getStatusIntentHandler');
 const SuggestLetterIntentHandler = require('./handlers/suggestLetterIntentHandler');
 
 // This handler acts as the entry point for your skill, routing all request and response
