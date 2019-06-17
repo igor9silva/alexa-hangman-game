@@ -105,6 +105,7 @@ const SuggestLetterIntentHandler = {
 
         return handlerInput.responseBuilder
                 .speak(speechText)
+                .reprompt('Diga alguma letra...')
                 .getResponse();
     }
 };
@@ -124,6 +125,7 @@ const GetStatusIntentHandler = {
 
         return handlerInput.responseBuilder
                 .speak(speechText)
+                .reprompt('Diga alguma letra...')
                 .getResponse();
     }
 };
