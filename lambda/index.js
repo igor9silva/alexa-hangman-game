@@ -266,7 +266,7 @@ function guessLetter(letter, attributes) {
 function lifeCount(attributes) {
     
     const { triedLetters, word } = attributes;
-    
+
     const failedAttempts = triedLetters.reduce((count, letter) => {
         return count + (word.includes(letter) ? 0 : 1);
     }, 0);
