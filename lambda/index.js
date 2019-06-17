@@ -88,7 +88,7 @@ const SuggestLetterIntentHandler = {
 
         let speechText = '';
         let ended = false;
-        
+
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
         const { triedLetters, word } = attributes;
 
