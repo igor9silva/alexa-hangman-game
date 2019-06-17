@@ -42,16 +42,23 @@ function localeIsValid(locale) {
 }
 
 module.exports.localizedMessage = function localizedMessage(key, locale) {
-    
+
+    if (!localeIsValid(locale)) {
+        throw "LocaleNotSupported";
+    }
+
+    const [language] = locale.split('_');
+
+    return MESSAGES[language][key];
+}
+
+module.exports.localizedRandomeWord = function localizedRandomeWord(locale) {
+
     if (!localeIsValid(locale)) {
         throw "LocaleNotSupported";
     }
     
     const [language] = locale.split('_');
-    
-    return MESSAGES[language][key];
-}
 
-module.exports.localizedRandomeWord = function localizedRandomeWord(locale) {
-    const chosenWord = WORDS[randomIndex(0, WORDS.length)];
+    const chosenWord = WORDS[language][randomIndex(0, WORDS.length)];
 }
