@@ -52,7 +52,7 @@ function localizedMessage(key, locale) {
         throw "LocaleNotSupported";
     }
     
-    const [language, region] = locale.split('_');
+    const [language] = locale.split('_');
     
     return MESSAGES[language][key];
 }
