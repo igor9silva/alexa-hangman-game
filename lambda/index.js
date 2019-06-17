@@ -72,6 +72,7 @@ const LaunchRequestHandler = {
         
         return handlerInput.responseBuilder
                 .speak(sentences.join(' '))
+                .reprompt('Diga alguma letra...')
                 .getResponse();
     }
 };
