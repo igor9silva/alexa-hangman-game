@@ -208,7 +208,6 @@ const GetStatusIntentHandler = {
                 speechText += p('vazio');
             }
         }
-        
 
         // const speechText = `Vou listar os espaços: vazio, e, n, vazio, i, l, a, vazio, vazio, vazio. A palavra possui 10 letras. Você ainda tem 3 vidas.`;
 
