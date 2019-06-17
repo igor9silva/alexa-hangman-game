@@ -18,7 +18,6 @@ module.exports.getS3PreSignedUrl = function getS3PreSignedUrl(s3ObjectKey) {
     console.log(`Util.s3PreSignedUrl: ${s3ObjectKey} URL ${s3PreSignedUrl}`); // you can see those on CloudWatch
 
     return s3PreSignedUrl;
-
 }
 
 /// get a random int
