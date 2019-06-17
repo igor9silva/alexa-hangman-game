@@ -154,9 +154,7 @@ const HelpIntentHandler = {
     },
     
     handle(handlerInput) {
-        
-        // TODO: implement
-        
+
         const speechText = `Diga uma letra, pergunte como está o jogo, ou desista! O que deseja?`;
 
         return handlerInput.responseBuilder
