@@ -187,19 +187,27 @@ const GetStatusIntentHandler = {
         let speechText = '';
         
         // say life count
-        if (lifeCount > 0) {
+        if (lifeCount > 1) {
             speechText += p(`Restam ${lifeCount} vidas.`);
-        } else {
-            return speak(`Acabaram suas vidas, você perdeu!`, true);
+        } else if (lifeCount === 1) {
+            speechText += p(`Resta ${lifeCount} vida.`);
         }
         
-        // say missing count (or tell user it've won)
+        // say missing count
         if (missingCount > 1) {
             speechText += p(`Faltam ${missingCount} letras.`);
         } else if (missingCount === 1) {
             speechText += p(`Falta 1 letra.`);
         }
 
+        // spell out letters (say "empty" if hasn't been guessed)
+        for (let letter in word) {
+            if (hasBeenGuessed(letter, triedLetters)) {
+                speechText += p(letter);
+            } else {
+                speechText += p('vazio');
+            }
+        }
         
 
         // const speechText = `Vou listar os espaços: vazio, e, n, vazio, i, l, a, vazio, vazio, vazio. A palavra possui 10 letras. Você ainda tem 3 vidas.`;
