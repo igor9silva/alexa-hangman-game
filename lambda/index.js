@@ -162,7 +162,7 @@ const SuggestLetterIntentHandler = {
         } else if (lifeCount === 1) {
             speechText += p(`Resta ${lifeCount} vida.`);
         } else {
-            return speak(`Acabaram suas vidas, você perdeu!`, true);
+            return speak(`Acabaram suas vidas, você perdeu! A palavra era ${word}.`, true);
         }
         
         return speak(speechText);
