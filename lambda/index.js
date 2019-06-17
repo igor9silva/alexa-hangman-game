@@ -93,7 +93,7 @@ const SuggestLetterIntentHandler = {
             if (isLetterValid(letter, attributes)) {
                 
                 const hitCount = guessLetter(letter, attributes);
-                const lifeCount = lifeCount(attributes);
+                const lifeCount = countLives(attributes);
                 
                 if (lifeCount > 0) {
                     speechText += `Você chutou a letra ${letter}.`;
@@ -278,7 +278,7 @@ function guessLetter(letter, attributes) {
 
 /// int
 /// return the current life count
-function lifeCount(attributes) {
+function countLives(attributes) {
     
     const { triedLetters, word } = attributes;
 
