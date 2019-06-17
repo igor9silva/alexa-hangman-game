@@ -18,7 +18,7 @@ module.exports = {
         
         // get request locale
         const locale = handlerInput.requestEnvelope.request.locale;
-        const locMsg = messageLocalizer(locale);
+        const l7d = messageLocalizer(locale);
 
         // shuffle a word
         const chosenWord = localizedRandomWord(locale);
@@ -36,16 +36,16 @@ module.exports = {
         // say hello, the chosen word length and how
         // many lives the user have
         const sentences = [
-            localizedMessage(locale, 'Hello, you are in the Hangman Game!'),
-            localizedMessage(locale, 'The game has started!'),
-            localizedMessage(locale, 'The word has {0} letters.', chosenWord.length),
-            localizedMessage(locale, 'You have {0} lives.', INITIAL_LIVES),
-            localizedMessage(locale, 'Guess a letter.'),
+            l7d('Hello, you are in the Hangman Game!'),
+            l7d('The game has started!'),
+            l7d('The word has {0} letters.', chosenWord.length),
+            l7d('You have {0} lives.', INITIAL_LIVES),
+            l7d('Guess a letter.'),
         ];
 
         return handlerInput.responseBuilder
                 .speak(sentences.join(' '))
-                .reprompt(localizedMessage(locale, 'Guess any letter...'))
+                .reprompt(l7d('Guess any letter...'))
                 .getResponse();
     }
 }
