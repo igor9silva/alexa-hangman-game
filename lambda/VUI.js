@@ -1,7 +1,7 @@
 
 module.exports.MESSAGES = {
 
-    'en' : {
+    'en': {
         
         // shared
         'There is {0} missing letters.': 'There is {0} missing letters.',
