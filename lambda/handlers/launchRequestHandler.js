@@ -1,12 +1,11 @@
 
 // Constants
-const {
-    INITIAL_LIVES,
-    WORDS,
-} = require('./config');
+const { INITIAL_LIVES } = require('../config');
 
-// Utils
-const { randomIndex } = require('./util');
+const {
+    localizedMessage,
+    localizedRandomWord,
+} = require('../i18n');
 
 module.exports = {
 
@@ -15,6 +14,9 @@ module.exports = {
     },
     
     async handle(handlerInput) {
+        
+        // get request locale
+        const locale = handlerInput.requestEnvelope.request.locale;
 
         // shuffle a word
         const chosenWord = WORDS[randomIndex(0, WORDS.length)];
