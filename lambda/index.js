@@ -114,7 +114,7 @@ const SuggestLetterIntentHandler = {
             return speak(`Você já chutou a letra ${letter}. Tente outra.`);
         }
 
-        // add new tried letter
+        // persist new tried letter
         attributes.triedLetters = triedLetters = triedLetters.concat(letter);
         handlerInput.attributesManager.setSessionAttributes(attributes);
 
