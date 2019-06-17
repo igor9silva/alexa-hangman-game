@@ -52,7 +52,7 @@ const LaunchRequestHandler = {
 
         const sentences = [
             `Olá, você está no Jogo da Forca!`,
-            `Já sorteei uma palavra e o jogo começou!`,
+            `O jogo já começou!`,
             `A palavra possui ${chosenWord.length} letras.`,
             `Você tem ${INITIAL_LIVES} vidas.`,
             `Chute uma letra.`,
