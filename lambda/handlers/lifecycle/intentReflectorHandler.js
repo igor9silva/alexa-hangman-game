@@ -17,7 +17,7 @@ module.exports = {
         const l7d = messageLocalizer(locale);
 
         return handlerInput.responseBuilder
-                .speak(l7d('You você invocou {0}', intentName))
+                .speak(l7d('You\'ve invoked {0}', intentName))
                 .getResponse();
     }
 }
