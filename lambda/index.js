@@ -183,6 +183,10 @@ const GetStatusIntentHandler = {
         
         const lifeCount = countLives(word, triedLetters);
         const missingCount = countMissingLetters(word, triedLetters);
+        
+        console.log('lifeCount:', lifeCount);
+        console.log('missingCount:', missingCount);
+        console.log('triedLetters:', triedLetters.join(', '));
 
         let speechText = '';
         
@@ -201,7 +205,7 @@ const GetStatusIntentHandler = {
         }
 
         // spell out letters (say "empty" if hasn't been guessed)
-        speechText += p(`Vou falar casa por casa:`);
+        speechText += p(`Vou falar casa por casa ${triedLetters}:`);
         for (let letter in word) {
             if (hasBeenGuessed(letter, triedLetters)) {
                 speechText += p(letter);
@@ -338,7 +342,7 @@ function p(text) {
 /// boolean
 /// return if letter has already been guessed
 function hasBeenGuessed(letter, triedLetters) {
-    console.log('hasBeenGuessed:', hasBeenGuessed, letter, triedLetters, triedLetters.includes(letter))
+    console.log('hasBeenGuessed:', letter, triedLetters, triedLetters.includes(letter))
     return triedLetters.includes(letter);
 }
 
