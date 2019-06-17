@@ -94,12 +94,12 @@ const SuggestLetterIntentHandler = {
                 const hitCount = guessLetter(letter, attributes);
                 const lifeCount = lifeCount(attributes);
                 
-                speechText = `Você chutou a letra ${letter}`;
+                speechText = `Você chutou a letra ${letter}.`;
                 
                 if (hitCount > 0) {
-                    speechText += `, e acertou ${hitCount}.`;
+                    speechText += `E acertou ${hitCount}.`;
                 } else {
-                    speechText += `, e não acertou nada.`;
+                    speechText += `E não acertou nada.`;
                 }
                 
                 speechText += `Restam ${lifeCount} vidas.`;
@@ -126,9 +126,11 @@ const GetStatusIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'GetStatusIntent';
     },
     
-    handle(handlerInput) {
+    async handle(handlerInput) {
         
         // TODO: implement
+        
+        const attributes = await handlerInput.attributesManager.getSessionAttributes();
         
         const speechText = `A palavra é ${attributes.word}. Você já tentou as letras: ${attributes.triedLetters.join(', ')}`;
         
