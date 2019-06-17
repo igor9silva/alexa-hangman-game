@@ -13,12 +13,3 @@ module.exports.SUPPORTED_LANGUAGES = {
     'en': ['US', 'UK', 'AU', 'CA', 'IN'],
     'pt': ['BR', 'PT'],
 };
-
-module.exports.WORDS = [
-    'ventilador',
-    'parede',
-    'porta',
-    'celular',
-    'rato',
-    'macarrao',
-];
