@@ -97,11 +97,13 @@ const SuggestLetterIntentHandler = {
             return handlerInput.responseBuilder
                     .speak(speechText)
                     .reprompt('Diga alguma letra...')
-                    .withShouldEndSession(shouldEndSession)
+                    .withShouldEndSession(shouldEndSession || false)
                     .getResponse()
         };
 
-        if (LETTERS.includes(letter)) {
+        if (!LETTERS.includes(letter)) {
+            return end(`A letra que você chutou não é válida. Tente outra.`, false);
+        }
 
             if (hasntBeenGuessed(letter, triedLetters)) {
                 
@@ -143,7 +145,7 @@ const SuggestLetterIntentHandler = {
             }
 
         } else {
-            speechText = `A letra que você chutou não é válida. Tente outra.`;
+            speechText = ;
         }
     }
 };
