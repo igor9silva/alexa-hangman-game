@@ -16,10 +16,8 @@ module.exports = {
         const locale = handlerInput.requestEnvelope.request.locale;
         const l7d = messageLocalizer(locale);
 
-        const speechText = l7d('Bye Bye! It was a nice game!');
-
         return handlerInput.responseBuilder
-                .speak(speechText)
+                .speak(l7d('Bye Bye! It was a nice game!'))
                 .getResponse();
     }
 }
