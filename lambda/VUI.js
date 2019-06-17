@@ -8,11 +8,28 @@ const {
 // Utils
 const { randomIndex } = require('./util');
 
-const MESSAGES = {
+module.exports.MESSAGES = {
     'en' : {
         
     },
     'pt': {
         
     }
+}
+
+module.exports.WORDS = {
+    
+}
+
+module.exports.WORDS = {
+    'pt': [
+        'ventilador',
+        'parede',
+        'porta',
+        'celular',
+        'rato',
+        'macarrao',
+    ],
+    'en': [
+    ]
 }
