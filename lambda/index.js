@@ -1,10 +1,4 @@
 const Alexa = require('ask-sdk-core');
-// const { DynamoDbPersistenceAdapter } = require('ask-sdk-dynamodb-persistence-adapter');
-
-// const persistenceAdapter = new DynamoDbPersistenceAdapter({
-//   tableName: 'ForcaStates',
-//   createTable: true
-// });
 
 const INITIAL_LIVES = 5;
 
@@ -51,7 +45,7 @@ const LaunchRequestHandler = {
     
     async handle(handlerInput) {
         
-        const chosenWord = WORDS[0];
+        const chosenWord = WORDS[randomIndex(0, WORDS.length)];
 
         const sentences = [
             `Olá, você está no Jogo da Forca!`,
@@ -64,11 +58,10 @@ const LaunchRequestHandler = {
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
 
         // create initial attributes
-        attributes.word = 'ventilador'; // TODO: shuffle a word
-        attributes.triedLetters = ['e', 'n', 'i', 'l', 'a']; // TODO: clear it
+        attributes.word = chosenWord;
+        attributes.triedLetters = [];
 
         handlerInput.attributesManager.setSessionAttributes(attributes);
-        // handlerInput.attributesManager.savePersistentAttributes();
         
         return handlerInput.responseBuilder
                 .speak(sentences.join(' '))
@@ -225,6 +218,12 @@ const ErrorHandler = {
                 .getResponse();
     }
 };
+
+function randomIndex(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
 // This handler acts as the entry point for your skill, routing all request and response
 // payloads to the handlers above. Make sure any new handlers or interceptors you've
