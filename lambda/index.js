@@ -92,6 +92,14 @@ const SuggestLetterIntentHandler = {
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
         const { word } = attributes;
         let { triedLetters } = attributes;
+        
+        const end = (speechText, shouldEndSession) => {
+            return handlerInput.responseBuilder
+                    .speak(speechText)
+                    .reprompt('Diga alguma letra...')
+                    .withShouldEndSession(shouldEndSession)
+                    .getResponse()
+        };
 
         if (LETTERS.includes(letter)) {
 
@@ -106,9 +114,10 @@ const SuggestLetterIntentHandler = {
                 const lifeCount = countLives(triedLetters, word);
                 const missingCount = countMissingLetters(word, triedLetters, letter);
 
-                // build speech
+                // say guessed letter
                 speechText += p(`Você chutou a letra ${letter}.`);
 
+                // say hit count
                 if (hitCount > 1) {
                     speechText += p(`Acertou ${hitCount} posições.`);
                 } else if (hitCount === 1) {
@@ -117,6 +126,7 @@ const SuggestLetterIntentHandler = {
                     speechText += p(`Não acertou nada.`);
                 }
 
+                // say updated life count
                 speechText += p(`Restam ${lifeCount} vidas.`);
 
                 // check if  won or lives ended
@@ -135,12 +145,6 @@ const SuggestLetterIntentHandler = {
         } else {
             speechText = `A letra que você chutou não é válida. Tente outra.`;
         }
-
-        return handlerInput.responseBuilder
-                .speak(speechText)
-                .reprompt('Diga alguma letra...')
-                .withShouldEndSession(ended)
-                .getResponse();
     }
 };
 
