@@ -19,7 +19,8 @@ module.exports.MESSAGES = {
         'The game has started!': `The game has started!`,
         'The word has {0} letters.': `The word has {0} letters.`,
         'You have {0} {1}.': `You have {0} {1}.`,
-        'Guess a letter.': 'Chute uma letra.',
+        'Guess a letter.': 'Guess a letter.',
+        'Guess any letter...': 'Guess any letter...',
     },
     'pt': {
 
@@ -33,6 +34,7 @@ module.exports.MESSAGES = {
         'The word has {0} letters.': `A palavra possui {0} letras.`,
         'You have {0} {1}.': `Você tem {0} {1}.`,
         'Guess a letter.': 'Chute uma letra.',
+        'Guess any letter...': 'Diga alguma letra...',
     },
 }
 
