@@ -263,6 +263,7 @@ function parseLetter(value) {
     return (value || '').toUpperCase().replace('.', '');
 }
 
+/// surround string with paragragh tag <p>
 function p() {
     
 }
