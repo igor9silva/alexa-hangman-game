@@ -256,8 +256,14 @@ function randomIndex(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+/// parse letter slot
+/// uppercase it and remove ending dot (.)
 function parseLetter(value) {
     return (value || '').toUpperCase().replace('.', '');
+}
+
+function p() {
+    
 }
 
 // ACTUAL GAME LOGIC
