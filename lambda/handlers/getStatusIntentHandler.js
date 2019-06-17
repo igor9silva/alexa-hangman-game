@@ -1,4 +1,8 @@
 
+
+// Utils
+const { p } = require('./util');
+
 // Game Logic
 const {
     countLives,
