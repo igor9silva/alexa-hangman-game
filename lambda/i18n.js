@@ -50,10 +50,10 @@ module.exports.localizedMessage = function localizedMessage(locale, key, ...para
     const [language] = locale.split('_');
 
     let value = MESSAGES[language][key];
-    
+
     // replace {0} for params[0], {1} for params[1], etc
     params.forEach((param, i) => value.replace(`{${i}}`, param));
-    
+
     return value;
 }
 
