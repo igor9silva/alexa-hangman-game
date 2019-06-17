@@ -93,7 +93,7 @@ const SuggestLetterIntentHandler = {
         const { triedLetters, word } = attributes;
 
         if (LETTERS.includes(letter)) {
-            
+
             if (isLetterValid(letter, triedLetters)) {
                 
                 // add new tried letter
