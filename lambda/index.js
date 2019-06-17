@@ -55,7 +55,7 @@ const LaunchRequestHandler = {
             `Já sorteei uma palavra e o jogo começou!`,
             `A palavra possui ${chosenWord.length} letras.`,
             `Você tem ${INITIAL_LIVES} vidas.`,
-            `Chute uma letra.`, 
+            `Chute uma letra.`,
         ];
 
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
