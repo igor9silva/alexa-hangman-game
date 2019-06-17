@@ -176,8 +176,8 @@ const CancelAndStopIntentHandler = {
 
         // TODO: implement
 
-        const speechText = `Tchau!`;
-        
+        const speechText = `Tchau! Foi um bom jogo!`;
+
         return handlerInput.responseBuilder
                 .speak(speechText)
                 .getResponse();
