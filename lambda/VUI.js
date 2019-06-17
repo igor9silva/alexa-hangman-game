@@ -1,13 +1,4 @@
 
-// Constants
-const {
-    WORDS,
-    SUPPORTED_LANGUAGES
-} = require('./config');
-
-// Utils
-const { randomIndex } = require('./util');
-
 module.exports.MESSAGES = {
     'en' : {
         
