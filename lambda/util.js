@@ -5,7 +5,7 @@ const s3SigV4Client = new AWS.S3({
 });
 
 // get pre-signed S3 URL
-module.exports.getS3PreSignedUrl = function getS3PreSignedUrl(s3ObjectKey) {
+function getS3PreSignedUrl(s3ObjectKey) {
 
     const bucketName = process.env.S3_PERSISTENCE_BUCKET;
     
@@ -21,7 +21,7 @@ module.exports.getS3PreSignedUrl = function getS3PreSignedUrl(s3ObjectKey) {
 }
 
 /// get a random int
-module.exports.randomIndex = function randomIndex(min, max) {
+function randomIndex(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
@@ -29,6 +29,11 @@ module.exports.randomIndex = function randomIndex(min, max) {
 
 /// parse letter slot
 /// uppercase it and remove ending dot (.)
-module.exports.parseLetter = function parseLetter(value) {
+function parseLetter(value) {
     return (value || '').toUpperCase().replace('.', '');
 }
+
+// export functions
+module.exports.getS3PreSignedUrl = getS3PreSignedUrl;
+module.exports.randomIndex = randomIndex;
+module.exports.parseLetter = parseLetter;
