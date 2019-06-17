@@ -11,8 +11,8 @@ const {
 } = require('./handlers/defaultHandlers');
 
 const LaunchRequestHandler = require('./handlers/launchRequestHandler');
-const SuggestLetterIntentHandler = require('./handlers/suggestLetterIntentHandler');
 const GetStatusIntentHandler = require('./handlers/GetStatusIntentHandler');
+const SuggestLetterIntentHandler = require('./handlers/suggestLetterIntentHandler');
 
 // This handler acts as the entry point for your skill, routing all request and response
 // payloads to the handlers above. Make sure any new handlers or interceptors you've
