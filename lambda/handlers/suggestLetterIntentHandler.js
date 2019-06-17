@@ -126,7 +126,7 @@ module.exports = {
         } else if (lifeCount === 1) {
             speechText += p(l7d('You have 1 life left.'));
         } else {
-            return speak(l7d(`Acabaram suas vidas, você perdeu! A palavra era  ${word}.`), true);
+            return speak(l7d('You\'ve lost, there are no lives left! The word was {0}.', word), true);
         }
         
         return speak(speechText);
