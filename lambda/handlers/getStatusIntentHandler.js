@@ -5,6 +5,7 @@ const { p } = require('./util');
 
 // Game Logic
 const {
+    hasBeenGuessed,
     countLives,
     countMissingLetters,
 } = require('./game');
