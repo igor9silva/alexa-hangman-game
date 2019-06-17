@@ -141,25 +141,17 @@ const SuggestLetterIntentHandler = {
         } else if (missingCount === 1) {
             speechText += p(`Falta 1 letra.`);
         } else {
-            return speak(`Parabéns, você ganhou! A palavra é ${word}.`);
+            return speak(`Parabéns, você ganhou! A palavra é ${word}.`, true);
         }
 
         // say life count (or tell user it've lost)
         if (lifeCount > 0) {
             speechText += p(`Restam ${lifeCount} vidas.`);
         } else {
-            return speak(`Acabaram suas vidas, você perdeu!`);
+            return speak(`Acabaram suas vidas, você perdeu!`, true);
         }
         
-
-        // check if  won or lives ended
-        if (missingCount === 0) {
-            speechText = p();
-            ended = true;
-        } else if (lifeCount === 0) {
-            speechText = p();
-            ended = true;
-        }
+        speak(speechText);
     }
 };
 
