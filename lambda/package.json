@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Amazon Alexa",
-  "license": "ISC",
+  "author": "Igor Silva",
+  "license": "JLMK",
   "dependencies": {
     "ask-sdk-dynamodb-persistence-adapter": "^2.6.0",
     "ask-sdk-core": "^2.0.7",
