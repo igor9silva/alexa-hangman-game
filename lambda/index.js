@@ -90,14 +90,19 @@ const SuggestLetterIntentHandler = {
         let ended = false;
         
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
+        const { triedLetters, word } = attributes;
 
         if (LETTERS.includes(letter)) {
             
-            if (isLetterValid(letter, attributes)) {
+            if (isLetterValid(letter, triedLetters)) {
                 
-                const hitCount = guessLetter(letter, attributes);
-                const lifeCount = countLives(attributes);
-                
+                // add new tried letter
+                attributes.triedLetters = triedLetters.concat(letter);
+                handlerInput.attributesManager.setSessionAttributes(attributes);
+
+                const hitCount = countHits(letter, triedLetters, word);
+                const lifeCount = countLives(triedLetters, word);
+
                 if (lifeCount > 0) {
                     speechText += `Você chutou a letra ${letter}.`;
                     speechText += (hitCount > 0) ? `E acertou ${hitCount} posições.` : `E não acertou nada.`;
@@ -257,20 +262,14 @@ function parseLetter(value) {
 
 /// boolean
 /// valid if letter wasn't guessed yet
-function isLetterValid(letter, attributes) {
-    const { triedLetters } = attributes;
+function isLetterValid(letter, triedLetters) {
     return !triedLetters.includes(letter);
 }
 
 /// int
-/// guess the letter (updated the guessed array)
 /// return the hit count (how many occurrencies of `letter` in `word`)
-function guessLetter(letter, attributes) {
-
-    const { triedLetters, word } = attributes;
-
+function countHits(letter, triedLetters, word) {
     if (!triedLetters.includes(letter)) {
-        attributes.triedLetters.push(letter);
         return word.split(letter).length - 1; // `letter` occurrencies in `word`
     } else {
         return 0;
@@ -279,15 +278,22 @@ function guessLetter(letter, attributes) {
 
 /// int
 /// return the current life count
-function countLives(attributes) {
-    
-    const { triedLetters, word } = attributes;
+function countLives(triedLetters, word) {
 
     const failedAttempts = triedLetters.reduce((count, letter) => {
         return count + (word.includes(letter) ? 0 : 1);
     }, 0);
     
     return INITIAL_LIVES - failedAttempts;
+}
+
+function countMissingLetters(attributes) {
+    
+    const { triedLetters, word } = attributes;
+    
+    const failedAttempts = triedLetters.reduce((count, letter) => {
+        return count + (word.includes(letter) ? 0 : 1);
+    }, 0);
 }
 
 // This handler acts as the entry point for your skill, routing all request and response
