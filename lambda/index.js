@@ -120,13 +120,6 @@ const SuggestLetterIntentHandler = {
         const hitCount = countHits(letter, word);
         const lifeCount = countLives(word, triedLetters);
         const missingCount = countMissingLetters(word, triedLetters);
-        
-        console.log('letter:', letter);
-        console.log('word:', word);
-        console.log('hitCount:', hitCount);
-        console.log('lifeCount:', lifeCount);
-        console.log('missingCount:', missingCount);
-        console.log('triedLetters:', triedLetters.join(', '));
 
         // say guessed letter
         speechText += p(`Você chutou a letra ${letter}.`);
@@ -227,7 +220,9 @@ exports.handler = Alexa.SkillBuilders.custom()
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,
-        IntentReflectorHandler) // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
+        IntentReflectorHandler, // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
+    )
     .addErrorHandlers(
-        ErrorHandler)
+        ErrorHandler,
+    )
     .lambda();
