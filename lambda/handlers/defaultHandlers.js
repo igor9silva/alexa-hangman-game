@@ -50,28 +50,6 @@ module.exports.SessionEndedRequestHandler = {
     }
 }
 
-// The intent reflector is used for interaction model testing and debugging.
-// It will simply repeat the intent the user said. You can create custom handlers
-// for your intents by defining them above, then also adding them to the request
-// handler chain.
-module.exports.IntentReflectorHandler = {
-
-    canHandle(handlerInput) {
-        return handlerInput.requestEnvelope.request.type === 'IntentRequest';
-    },
-
-    handle(handlerInput) {
-
-        const intentName = handlerInput.requestEnvelope.request.intent.name;
-
-        const speechText = `You você invocou ${intentName}`;
-
-        return handlerInput.responseBuilder
-                .speak(speechText)
-                .getResponse();
-    }
-};
-
 // Generic error handling to capture any syntax or routing errors. If you receive an error
 // stating the request handler chain is not found, you have not implemented a handler for
 // the intent being invoked or included it in the skill builder below.
@@ -92,4 +70,26 @@ module.exports.ErrorHandler = {
                 .reprompt(speechText)
                 .getResponse();
     }
-};
+}
+
+// The intent reflector is used for interaction model testing and debugging.
+// It will simply repeat the intent the user said. You can create custom handlers
+// for your intents by defining them above, then also adding them to the request
+// handler chain.
+module.exports.IntentReflectorHandler = {
+
+    canHandle(handlerInput) {
+        return handlerInput.requestEnvelope.request.type === 'IntentRequest';
+    },
+
+    handle(handlerInput) {
+
+        const intentName = handlerInput.requestEnvelope.request.intent.name;
+
+        const speechText = `You você invocou ${intentName}`;
+
+        return handlerInput.responseBuilder
+                .speak(speechText)
+                .getResponse();
+    }
+}
