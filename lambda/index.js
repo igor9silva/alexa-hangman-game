@@ -94,7 +94,7 @@ const SuggestLetterIntentHandler = {
 
         if (LETTERS.includes(letter)) {
 
-            if (isLetterValid(letter, triedLetters)) {
+            if (hasntBeenGuessed(letter, triedLetters)) {
                 
                 // add new tried letter
                 attributes.triedLetters = triedLetters.concat(letter);
@@ -262,7 +262,7 @@ function parseLetter(value) {
 
 /// boolean
 /// valid if letter wasn't guessed yet
-function isLetterValid(letter, triedLetters) {
+function hasntBeenGuessed(letter, triedLetters) {
     return !triedLetters.includes(letter);
 }
 
