@@ -4,7 +4,7 @@ const { INITIAL_LIVES } = require('../config');
 
 // i18n
 const {
-    localizedMessage,
+    messageLocalizer,
     localizedRandomWord,
 } = require('../i18n');
 
