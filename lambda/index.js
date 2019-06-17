@@ -257,9 +257,10 @@ function guessLetter(letter, attributes) {
 
     if (!triedLetters.includes(letter)) {
         attributes.triedLetters.push(letter);
+        return word.split(letter).length - 1; // `letter` occurrencies in `word`
+    } else {
+        return 0;
     }
-
-    return word.split(letter).length - 1; // `letter` occurrencies in `word`
 }
 
 function lifeCount(attributes) {
