@@ -16,7 +16,7 @@ const {
     countMissingLetters,
 } = require('./game');
 
-const SuggestLetterIntentHandler = {
+module.exports = {
     
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
@@ -98,4 +98,4 @@ const SuggestLetterIntentHandler = {
         
         return speak(speechText);
     }
-};
+}
