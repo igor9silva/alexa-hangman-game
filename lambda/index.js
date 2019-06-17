@@ -1,5 +1,7 @@
 const Alexa = require('ask-sdk-core');
 
+// TODO: abstract text message (+ i18n)
+
 // Constants
 const { INITIAL_LIVES, WORDS, VALID_LETTERS } = require('./config');
 
