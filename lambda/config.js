@@ -7,9 +7,9 @@ module.exports.VALID_LETTERS = [
     'M', 'N', 'O', 'P', 'Q', 'R', 
     'S', 'T', 'U', 'V', 'X', 'Z',
     'W', 'Y',
-];
+]
 
 module.exports.SUPPORTED_LANGUAGES = {
     'en': ['US', 'UK', 'AU', 'CA', 'IN'],
     'pt': ['BR', 'PT'],
-};
+}
