@@ -101,7 +101,7 @@ const SuggestLetterIntentHandler = {
                 handlerInput.attributesManager.setSessionAttributes(attributes);
 
                 // get hit and life count
-                const hitCount = countHits(letter, triedLetters, word);
+                const hitCount = countHits(letter, word);
                 const lifeCount = countLives(triedLetters, word);
 
                 // build speech
