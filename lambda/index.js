@@ -100,6 +100,7 @@ const SuggestLetterIntentHandler = {
                 attributes.triedLetters = triedLetters.concat(letter);
                 handlerInput.attributesManager.setSessionAttributes(attributes);
 
+                // get hit and life count
                 const hitCount = countHits(letter, triedLetters, word);
                 const lifeCount = countLives(triedLetters, word);
 
