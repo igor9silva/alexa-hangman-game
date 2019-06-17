@@ -5,6 +5,9 @@ const {
     WORDS,
 } = require('./config');
 
+// Utils
+const { randomIndex } = require('./util');
+
 const LaunchRequestHandler = {
     
     canHandle(handlerInput) {
