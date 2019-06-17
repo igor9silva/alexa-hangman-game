@@ -16,11 +16,9 @@ module.exports = {
 
         console.log(`~~~~ Error handled: ${error.message}`); // you can see those on CloudWatch
 
-        const speechText = 'Sorry, I didn\'t understand what you\'ve said. Could you please repeat?';
-
         return handlerInput.responseBuilder
                 .speak(speechText)
-                .reprompt(speechText)
+                .reprompt(l7d('Sorry, I didn\'t understand what you\'ve said. Could you please repeat?'))
                 .getResponse();
     }
 }
