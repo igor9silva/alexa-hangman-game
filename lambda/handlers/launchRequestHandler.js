@@ -2,6 +2,7 @@
 // Constants
 const { INITIAL_LIVES } = require('../config');
 
+// i18n
 const {
     localizedMessage,
     localizedRandomWord,
