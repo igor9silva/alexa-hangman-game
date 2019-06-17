@@ -58,7 +58,7 @@ const LaunchRequestHandler = {
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
 
         // create initial attributes
-        attributes.word = chosenWord;
+        attributes.word = chosenWord.toUpperCase();
         attributes.triedLetters = [];
 
         handlerInput.attributesManager.setSessionAttributes(attributes);
@@ -245,7 +245,15 @@ function isLetterValid(letter, attributes) {
 }
 
 function guessLetter(letter, attributes) {
-    // TODO: implement
+
+    const { triedLetters, word } = attributes;
+
+    if (!triedLetters.includes(letter)) {
+        attributes.triedLetters.push(letter);
+    }
+
+    return word.split(letter)
+    
     // update session
     // return hit count
 }
