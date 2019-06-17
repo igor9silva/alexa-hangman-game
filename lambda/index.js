@@ -108,7 +108,13 @@ const SuggestLetterIntentHandler = {
 
                 // build speech
                 speechText += p(`Você chutou a letra ${letter}.`);
-                speechText += p((hitCount > 0) ? `Acertou ${hitCount} posições.` : `Não acertou nada.`);
+                if (hitCount > 1) {
+                    speechText += p(`Acertou ${hitCount} posições.`);
+                } else if (hitCount == 1) {
+                    speechText += p(`Acertou 1 posição.`);
+                } else {
+                    speechText += p(`Não acertou nada.`);
+                }
                 speechText += p(`Restam ${lifeCount} vidas.`);
 
                 // check if lives ended
