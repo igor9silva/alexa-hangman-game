@@ -57,7 +57,7 @@ const LaunchRequestHandler = {
             `Você tem ${INITIAL_LIVES} vidas.`,
             `Chute uma letra.`,
         ];
-        
+
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
 
         // create initial attributes
