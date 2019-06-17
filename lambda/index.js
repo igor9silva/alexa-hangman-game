@@ -20,7 +20,10 @@ const {
 
 // Game Logic
 const {
-    
+    hasBeenGuessed,
+    countHits,
+    countLives,
+    countMissingLetters,
 } = require('./game')
 
 const LaunchRequestHandler = {
