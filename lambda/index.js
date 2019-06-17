@@ -15,7 +15,7 @@ const {
 const HelpIntentHandler = require('./handlers/helpIntentHandler');
 const CancelAndStopIntentHandler = require('./handlers/helpIntentHandler');
 const SessionEndedRequestHandler = require('./handlers/helpIntentHandler');
-const ErrorHandler = require('./handlers/helpIntentHandler');
+const ErrorHandler = require('./handlers/errorHandler');
 const IntentReflectorHandler = require('./handlers/intentReflectorHandler');
 
 const LaunchRequestHandler = require('./handlers/launchRequestHandler');
