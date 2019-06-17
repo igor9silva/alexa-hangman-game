@@ -32,6 +32,22 @@ module.exports = {
         const slots = request.intent.slots;
         const letter = parseLetter(slots.letter.value);
         
+                // suggest letter intent handler
+        'Say any letter...'
+        'The letter you\'ve guessed isn\'t valid.'
+        'Try another.'
+        'You\'ve already guessed the letter {0}'
+        'You\'ve guessed the letter {0}.'
+        'You\'ve hit {0} cases.'
+        'You\'ve hit 1 case.'
+        'You\'ve not hit any cases.'
+        'There is {0} missing letters.'
+        'There is 1 missing letter.'
+        'Congratulations, you\'ve won! The word is {0}.'
+        'You have {0} lives left.'
+        'You have 1 life left.'
+        'You\'ve lost, there are no lives left! The word was {0}.'
+        
         // get request locale
         const locale = request.locale;
 
@@ -46,7 +62,7 @@ module.exports = {
         const speak = (speechText, shouldEndSession) => {
             return handlerInput.responseBuilder
                     .speak(speechText)
-                    .reprompt('Diga alguma letra...')
+                    .reprompt(localizedMessage(locale, 'Say any letter...'))
                     .withShouldEndSession(shouldEndSession || false)
                     .getResponse()
         };
@@ -54,7 +70,11 @@ module.exports = {
         // check if guessed letter is valid
         // else stop here
         if (!VALID_LETTERS.includes(letter)) {
-            return speak(p(`A letra que você chutou não é válida.`) + p(`Tente outra.`));
+            
+            const msg1 = localizedMessage(locale, 'The letter you\'ve guessed isn\'t valid.');
+            const msg2 = localizedMessage(locale, 'Try another.');
+
+            return speak(p(msg1) + p(msg2));
         }
 
         // check if letter hasnt been guessed yet
