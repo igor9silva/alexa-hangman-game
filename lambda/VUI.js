@@ -77,6 +77,9 @@ module.exports.MESSAGES = {
         
         // intent reflector handler
         'You\'ve invoked {0}': 'You você invocou {0}',
+        
+        // error handler
+        'Sorry, I didn\'t understand what you\'ve said. Could you please repeat?': 'Desculpe, eu não entendi o que você disse. Por favor tente novamente.',
     },
 }
 
