@@ -94,7 +94,7 @@ const SuggestLetterIntentHandler = {
                 const hitCount = guessLetter(letter, attributes);
                 const lifeCount = lifeCount(attributes);
 
-                speechText = `Você chutou a letra ${letter}.`;
+                speechText += `Você chutou a letra ${letter}.`;
                 speechText += (hitCount > 0) ? `E acertou ${hitCount}.` : speechText += `E não acertou nada.`;
                 speechText += `Restam ${lifeCount} vidas.`;
                 
