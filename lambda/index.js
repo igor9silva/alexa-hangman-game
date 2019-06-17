@@ -1,10 +1,10 @@
 const Alexa = require('ask-sdk-core');
-const { DynamoDbPersistenceAdapter } = require('ask-sdk-dynamodb-persistence-adapter');
+// const { DynamoDbPersistenceAdapter } = require('ask-sdk-dynamodb-persistence-adapter');
 
-const persistenceAdapter = new DynamoDbPersistenceAdapter({
-  tableName: 'ForcaStates',
-  createTable: true
-});
+// const persistenceAdapter = new DynamoDbPersistenceAdapter({
+//   tableName: 'ForcaStates',
+//   createTable: true
+// });
 
 const INITIAL_LIVES = 5;
 
@@ -49,7 +49,7 @@ const LaunchRequestHandler = {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
     
-    handle(handlerInput) {
+    async handle(handlerInput) {
 
         const sentences = [
             `Olá, você está no Jogo da Forca!`,
@@ -59,7 +59,7 @@ const LaunchRequestHandler = {
             `Chute uma letra.`,
         ];
         
-        // const attributes = await handlerInput.attributesManager.getPersistentAttributes();
+        const attributes = await handlerInput.attributesManager.getSessionAttributes();
 
         // // create initial attributes
         // attributes.word = 'ventilador'; // TODO: shuffle a word
