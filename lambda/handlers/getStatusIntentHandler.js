@@ -24,10 +24,6 @@ module.exports = {
         
         const lifeCount = countLives(word, triedLetters);
         const missingCount = countMissingLetters(word, triedLetters);
-        
-        console.log('lifeCount:', lifeCount);
-        console.log('missingCount:', missingCount);
-        console.log('triedLetters:', triedLetters.join(', '));
  
         let speechText = '';
         
