@@ -111,14 +111,12 @@ const SuggestLetterIntentHandler = {
         } else {
             speechText = `A letra que você chutou não é válida. Tente outra.`;
         }
-        
-        const responseBuilder = handlerInput.responseBuilder.speak(speechText);
-        
-        if (!ended) {
-            responseBuilder.reprompt('Diga alguma letra...')
-        }
 
-        return responseBuilder.getResponse();
+        return responseBuilder
+                .speak(speechText)
+                .reprompt('Diga alguma letra...')
+                .withShouldEndSession(ended)
+                .getResponse();
     }
 };
 
