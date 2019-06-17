@@ -240,8 +240,8 @@ function randomIndex(min, max) {
 }
 
 function isLetterValid(letter, attributes) {
-    // TODO: implement
-    // return if already guessed
+    const { triedLetters } = attributes;
+    return triedLetters.includes(letter);
 }
 
 function guessLetter(letter, attributes) {
