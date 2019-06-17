@@ -1,6 +1,6 @@
 
 // When the user calls for help
-module.exports.HelpIntentHandler = {
+const HelpIntentHandler = {
     
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
@@ -19,7 +19,7 @@ module.exports.HelpIntentHandler = {
 }
 
 // When the user aks to stop or cancel
-module.exports.CancelAndStopIntentHandler = {
+const CancelAndStopIntentHandler = {
 
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
@@ -38,7 +38,7 @@ module.exports.CancelAndStopIntentHandler = {
 }
 
 // Whenever the session has ended. A chance to cleanup!
-module.exports.SessionEndedRequestHandler = {
+const SessionEndedRequestHandler = {
 
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'SessionEndedRequest';
@@ -53,7 +53,7 @@ module.exports.SessionEndedRequestHandler = {
 // Generic error handling to capture any syntax or routing errors. If you receive an error
 // stating the request handler chain is not found, you have not implemented a handler for
 // the intent being invoked or included it in the skill builder below.
-module.exports.ErrorHandler = {
+const ErrorHandler = {
 
     canHandle() {
         return true;
@@ -76,7 +76,7 @@ module.exports.ErrorHandler = {
 // It will simply repeat the intent the user said. You can create custom handlers
 // for your intents by defining them above, then also adding them to the request
 // handler chain.
-module.exports.IntentReflectorHandler = {
+const IntentReflectorHandler = {
 
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest';
@@ -93,3 +93,10 @@ module.exports.IntentReflectorHandler = {
                 .getResponse();
     }
 }
+
+// exports handlers
+module.exports.HelpIntentHandler = HelpIntentHandler;
+module.exports.CancelAndStopIntentHandler = CancelAndStopIntentHandler;
+module.exports.SessionEndedRequestHandler = SessionEndedRequestHandler;
+module.exports.ErrorHandler = ErrorHandler;
+module.exports.IntentReflectorHandler = IntentReflectorHandler;
