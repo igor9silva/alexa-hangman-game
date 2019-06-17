@@ -13,6 +13,7 @@ const {
 const {
     randomIndex,
     parseLetter,
+    p,
 } = require('./util');
 
 // Intent Handlers
@@ -214,11 +215,6 @@ const GetStatusIntentHandler = {
                 .getResponse();
     }
 };
-
-/// surround string with paragragh tag <p>
-function p(text) {
-    return `<p>${text}</p>\n`
-}
 
 // This handler acts as the entry point for your skill, routing all request and response
 // payloads to the handlers above. Make sure any new handlers or interceptors you've
