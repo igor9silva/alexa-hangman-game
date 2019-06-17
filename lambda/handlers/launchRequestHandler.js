@@ -44,5 +44,4 @@ module.exports = {
                 .reprompt('Diga alguma letra...')
                 .getResponse();
     }
-};
-
+}
