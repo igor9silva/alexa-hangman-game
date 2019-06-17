@@ -303,7 +303,7 @@ function countMissingLetters(word, triedLetters, letter) {
     
     triedLetters = triedLetters.concat(letter);
 
-    const failedAttempts = triedLetters.reduce((count, letter) => {
+    return triedLetters.reduce((count, letter) => {
         return count + (word.split(letter).length - 1);
     }, 0);
 }
