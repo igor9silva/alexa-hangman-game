@@ -132,7 +132,7 @@ const GetStatusIntentHandler = {
     async handle(handlerInput) {
         
         // TODO: implement
-        
+
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
         
         const speechText = `A palavra é ${attributes.word}. Você já tentou as letras: ${attributes.triedLetters.join(', ')}`;
