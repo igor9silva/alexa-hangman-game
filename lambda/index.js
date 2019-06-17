@@ -97,7 +97,7 @@ const SuggestLetterIntentHandler = {
             if (hasntBeenGuessed(letter, triedLetters)) {
                 
                 // add new tried letter
-                attributes.triedLetters = triedLetters.concat(letter);
+                attributes.triedLetters = triedLetters = triedLetters.concat(letter);
                 handlerInput.attributesManager.setSessionAttributes(attributes);
 
                 // get hit and life count
