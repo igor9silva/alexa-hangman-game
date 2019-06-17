@@ -9,7 +9,7 @@ const {
     parseLetter,
 } = require('./util');
 
-// Intents
+// Intent Handlers
 const {
     HelpIntentHandler,
     CancelAndStopIntentHandler,
