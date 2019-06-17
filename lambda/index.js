@@ -11,7 +11,7 @@ const WORDS = [
     'macarrao',
 ];
 
-const LETTERS = [
+const VALID_LETTERS = [
     'A',
     'B',
     'C',
@@ -92,7 +92,8 @@ const SuggestLetterIntentHandler = {
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
         const { word } = attributes;
         let { triedLetters } = attributes;
-        
+
+        // finish shortcut
         const speak = (speechText, shouldEndSession) => {
             return handlerInput.responseBuilder
                     .speak(speechText)
@@ -101,51 +102,47 @@ const SuggestLetterIntentHandler = {
                     .getResponse()
         };
 
-        if (!LETTERS.includes(letter)) {
+        // check if guessed letter is valid
+        if (!VALID_LETTERS.includes(letter)) {
             return speak(`A letra que você chutou não é válida. Tente outra.`);
         }
 
-            if (hasntBeenGuessed(letter, triedLetters)) {
-                
-                // add new tried letter
-                attributes.triedLetters = triedLetters = triedLetters.concat(letter);
-                handlerInput.attributesManager.setSessionAttributes(attributes);
+        // check if letter has already been guessed
+        if (!hasBeenGuessed(letter, triedLetters)) {
+            return speak(`Você já chutou a letra ${letter}. Tente outra.`);
+        }
 
-                // get hit and life count
-                const hitCount = countHits(letter, word);
-                const lifeCount = countLives(triedLetters, word);
-                const missingCount = countMissingLetters(word, triedLetters, letter);
+        // add new tried letter
+        attributes.triedLetters = triedLetters = triedLetters.concat(letter);
+        handlerInput.attributesManager.setSessionAttributes(attributes);
 
-                // say guessed letter
-                speechText += p(`Você chutou a letra ${letter}.`);
+        // get hit and life count
+        const hitCount = countHits(letter, word);
+        const lifeCount = countLives(triedLetters, word);
+        const missingCount = countMissingLetters(word, triedLetters, letter);
 
-                // say hit count
-                if (hitCount > 1) {
-                    speechText += p(`Acertou ${hitCount} posições.`);
-                } else if (hitCount === 1) {
-                    speechText += p(`Acertou 1 posição.`);
-                } else {
-                    speechText += p(`Não acertou nada.`);
-                }
+        // say guessed letter
+        speechText += p(`Você chutou a letra ${letter}.`);
 
-                // say updated life count
-                speechText += p(`Restam ${lifeCount} vidas.`);
-
-                // check if  won or lives ended
-                if (missingCount === 0) {
-                    speechText = p(`Parabéns, você ganou! A palavra é ${word}.`);
-                    ended = true;
-                } else if (lifeCount === 0) {
-                    speechText = p(`Acabaram suas vidas, você perdeu!`);
-                    ended = true;
-                }
-
-            } else {
-                speechText = `Você já chutou a letra ${letter}. Tente outra.`;
-            }
-
+        // say hit count
+        if (hitCount > 1) {
+            speechText += p(`Acertou ${hitCount} posições.`);
+        } else if (hitCount === 1) {
+            speechText += p(`Acertou 1 posição.`);
         } else {
-            speechText = ;
+            speechText += p(`Não acertou nada.`);
+        }
+
+        // say updated life count
+        speechText += p(`Restam ${lifeCount} vidas.`);
+
+        // check if  won or lives ended
+        if (missingCount === 0) {
+            speechText = p(`Parabéns, você ganou! A palavra é ${word}.`);
+            ended = true;
+        } else if (lifeCount === 0) {
+            speechText = p(`Acabaram suas vidas, você perdeu!`);
+            ended = true;
         }
     }
 };
@@ -291,9 +288,9 @@ function p(text) {
 // ACTUAL GAME LOGIC
 
 /// boolean
-/// valid if letter wasn't guessed yet
-function hasntBeenGuessed(letter, triedLetters) {
-    return !triedLetters.includes(letter);
+/// return if letter has already been guessed
+function hasBeenGuessed(letter, triedLetters) {
+    return triedLetters.includes(letter);
 }
 
 /// int
