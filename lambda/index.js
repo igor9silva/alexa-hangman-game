@@ -255,6 +255,9 @@ function isLetterValid(letter, attributes) {
     return !triedLetters.includes(letter);
 }
 
+/// int
+/// guess the letter (updated the guessed array)
+/// return the hit count (how many occurrencies of `letter` in `word`)
 function guessLetter(letter, attributes) {
 
     const { triedLetters, word } = attributes;
@@ -267,6 +270,8 @@ function guessLetter(letter, attributes) {
     }
 }
 
+/// int
+/// return the current life count
 function lifeCount(attributes) {
     
     const { triedLetters, word } = attributes;
