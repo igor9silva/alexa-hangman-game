@@ -1,13 +1,13 @@
 
 // Utils
-const { p } = require('./util');
+const { p } = require('../util');
 
 // Game Logic
 const {
     hasBeenGuessed,
     countLives,
     countMissingLetters,
-} = require('./game');
+} = require('../game');
 
 module.exports = {
     
