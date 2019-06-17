@@ -127,6 +127,14 @@ const SuggestLetterIntentHandler = {
         const hitCount = countHits(letter, word);
         const lifeCount = countLives(triedLetters, word);
         const missingCount = countMissingLetters(word, triedLetters, letter);
+        
+        console.log('letter:', letter);
+        console.log('word:', word);
+        console.log('hitCount:', hitCount);
+        console.log('lifeCount:', lifeCount);
+        console.log('missingCount:', missingCount);
+        console.log('triedLetters:', triedLetters.join(', '));
+
 
         // say guessed letter
         speechText += p(`Você chutou a letra ${letter}.`);
