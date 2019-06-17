@@ -16,6 +16,9 @@ const {
     countMissingLetters,
 } = require('../game');
 
+// i18n
+const { localizedMessage } = require('../i18n');
+
 module.exports = {
     
     canHandle(handlerInput) {
