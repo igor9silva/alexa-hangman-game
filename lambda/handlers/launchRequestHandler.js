@@ -19,7 +19,7 @@ module.exports = {
         const locale = handlerInput.requestEnvelope.request.locale;
 
         // shuffle a word
-        const chosenWord = WORDS[randomIndex(0, WORDS.length)];
+        const chosenWord = localizedRandomWord(locale);
 
         // get session attributes
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
