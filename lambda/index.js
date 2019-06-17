@@ -90,7 +90,8 @@ const SuggestLetterIntentHandler = {
         let ended = false;
 
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
-        const { triedLetters, word } = attributes;
+        const { word } = attributes;
+        let { triedLetters } = attributes;
 
         if (LETTERS.includes(letter)) {
 
