@@ -192,23 +192,6 @@ const GetStatusIntentHandler = {
     }
 };
 
-
-
-// HELPERS
-
-/// get a random int
-function randomIndex(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-
-/// parse letter slot
-/// uppercase it and remove ending dot (.)
-function parseLetter(value) {
-    return (value || '').toUpperCase().replace('.', '');
-}
-
 /// surround string with paragragh tag <p>
 function p(text) {
     return `<p>${text}</p>\n`
