@@ -67,7 +67,7 @@ const LaunchRequestHandler = {
         attributes.word = 'ventilador'; // TODO: shuffle a word
         attributes.triedLetters = ['e', 'n', 'i', 'l', 'a']; // TODO: clear it
 
-        handlerInput.attributesManager.setPersistentAttributes(attributes);
+        handlerInput.attributesManager.setSessionAttributes(attributes);
         // handlerInput.attributesManager.savePersistentAttributes();
         
         return handlerInput.responseBuilder
