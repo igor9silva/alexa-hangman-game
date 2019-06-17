@@ -1,44 +1,6 @@
 const Alexa = require('ask-sdk-core');
 
-const INITIAL_LIVES = 5;
-
-const WORDS = [
-    'ventilador',
-    'parede',
-    'porta',
-    'celular',
-    'rato',
-    'macarrao',
-];
-
-const VALID_LETTERS = [
-    'A',
-    'B',
-    'C',
-    'D',
-    'E',
-    'F',
-    'G',
-    'H',
-    'I',
-    'J',
-    'K',
-    'L',
-    'M',
-    'N',
-    'O',
-    'P',
-    'Q',
-    'R',
-    'S',
-    'T',
-    'U',
-    'V',
-    'X',
-    'Z',
-    'W',
-    'Y',
-];
+const { INITIAL_LIVES, WORDS, VALID_LETTERS } = require('./config');
 
 const LaunchRequestHandler = {
     
@@ -162,7 +124,7 @@ const SuggestLetterIntentHandler = {
         } else if (lifeCount === 1) {
             speechText += p(`Resta ${lifeCount} vida.`);
         } else {
-            return speak(`Acabaram suas vidas, você perdeu! A palavra era ${word}.`, true);
+            return speak(`Acabaram suas vidas, você perdeu! A palavra era  ${word}.`, true);
         }
         
         return speak(speechText);
@@ -187,7 +149,7 @@ const GetStatusIntentHandler = {
         console.log('lifeCount:', lifeCount);
         console.log('missingCount:', missingCount);
         console.log('triedLetters:', triedLetters.join(', '));
-
+ 
         let speechText = '';
         
         // say life count
