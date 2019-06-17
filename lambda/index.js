@@ -84,6 +84,7 @@ const SuggestLetterIntentHandler = {
         const letter = (slots.letter.value || '').toUpperCase();
 
         let speechText = '';
+        let ended = false;
         
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
 
@@ -93,6 +94,12 @@ const SuggestLetterIntentHandler = {
                 
                 const hitCount = guessLetter(letter, attributes);
                 const lifeCount = lifeCount(attributes);
+                
+                if (lifeCount > 0) {
+                    
+                } else {
+                    speechText = 'Acabaram suas vidas, você perdeu!';
+                }
 
                 speechText += `Você chutou a letra ${letter}.`;
                 speechText += (hitCount > 0) ? `E acertou ${hitCount} posições.` : `E não acertou nada.`;
@@ -105,11 +112,14 @@ const SuggestLetterIntentHandler = {
         } else {
             speechText = `A letra que você chutou não é válida. Tente outra.`;
         }
+        
+        const responseBuilder = handlerInput.responseBuilder.speak(speechText);
+        
+        if (!ended) {
+            responseBuilder.reprompt('Diga alguma letra...')
+        }
 
-        return handlerInput.responseBuilder
-                .speak(speechText)
-                .reprompt('Diga alguma letra...')
-                .getResponse();
+        return responseBuilder.getResponse();
     }
 };
 
