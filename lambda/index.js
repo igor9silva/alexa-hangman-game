@@ -111,7 +111,7 @@ const SuggestLetterIntentHandler = {
                 
                 if (hitCount > 1) {
                     speechText += p(`Acertou ${hitCount} posições.`);
-                } else if (hitCount == 1) {
+                } else if (hitCount === 1) {
                     speechText += p(`Acertou 1 posição.`);
                 } else {
                     speechText += p(`Não acertou nada.`);
