@@ -1,4 +1,7 @@
 
+// Constants
+const { VALID_LETTERS } = require('./config');
+
 // Utils
 const {
     parseLetter,
