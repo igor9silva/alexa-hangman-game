@@ -6,7 +6,7 @@ const { VALID_LETTERS } = require('../config');
 const {
     parseLetter,
     p,
-} = require('./util');
+} = require('../util');
 
 // Game Logic
 const {
