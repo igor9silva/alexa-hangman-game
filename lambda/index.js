@@ -110,7 +110,7 @@ const SuggestLetterIntentHandler = {
         // check if guessed letter is valid
         // else stop here
         if (!VALID_LETTERS.includes(letter)) {
-            return speak(`A letra que você chutou não é válida. Tente outra.`);
+            return speak(p('A letra que você chutou não é válida.') + p('Tente outra.'));
         }
 
         // check if letter hasnt been guessed yet
