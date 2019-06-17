@@ -2,9 +2,11 @@
 module.exports.MESSAGES = {
     'en' : {
         
-        // words
-        'life': 'life',
-        'lives': 'lives',
+        // shared
+        'There is {0} missing letters.': 'There is {0} missing letters.',
+        'There is 1 missing letter.': 'There is 1 missing letter.',
+        'You have {0} lives left.': 'You have {0} lives left.',
+        'You have 1 life left.': 'You have 1 life left.',
         
         // launch request handler
         'Hello, you are in the Hangman Game!': `Hello, you are in the Hangman Game!`,
@@ -23,21 +25,19 @@ module.exports.MESSAGES = {
         'You\'ve hit {0} cases.': 'You\'ve hit {0} cases.',
         'You\'ve hit 1 case.': 'You\'ve hit 1 case.',
         'You\'ve not hit any cases.': 'You\'ve not hit any cases.',
-        'There is {0} missing letters.': 'There is {0} missing letters.',
-        'There is 1 missing letter.': 'There is 1 missing letter.',
         'Congratulations, you\'ve won! The word is {0}.': 'Congratulations, you\'ve won! The word is {0}.',
-        'You have {0} lives left.': 'You have {0} lives left.',
-        'You have 1 life left.': 'You have 1 life left.',
         'You\'ve lost, there are no lives left! The word was {0}.': 'You\'ve lost, there are no lives left! The word was {0}.',
         
         // help intent handler
         'Say any letter, ask how you\'re going, or quit! Which one will it be?': 'Say any letter, ask how you\'re going, or quit! Which one will it be?',
     },
     'pt': {
-
-        // words
-        'life': 'vida',
-        'lives': 'vidas',
+        
+        // shared
+        'There is {0} missing letters.': 'Faltam {0} letras.',
+        'There is 1 missing letter.': 'Falta 1 letra.',
+        'You have {0} lives left.': 'Restam {0} vidas.',
+        'You have 1 life left.': 'Resta 1 vida.',
 
         // launch request handler
         'Hello, you are in the Hangman Game!': `Olá, você está no Jogo da Forca!`,
@@ -56,11 +56,7 @@ module.exports.MESSAGES = {
         'You\'ve hit {0} cases.': 'Acertou {0} posições.',
         'You\'ve hit 1 case.': 'Acertou 1 posição.',
         'You\'ve not hit any cases.': 'Não acertou nada.',
-        'There is {0} missing letters.': 'Faltam {0} letras.',
-        'There is 1 missing letter.': 'Falta 1 letra.',
         'Congratulations, you\'ve won! The word is {0}.': 'Parabéns, você ganhou! A palavra é {0}.',
-        'You have {0} lives left.': 'Restam {0} vidas.',
-        'You have 1 life left.': 'Resta 1 vida.',
         'You\'ve lost, there are no lives left! The word was {0}.': 'Acabaram suas vidas, você perdeu! A palavra era {0}.',
         
         // help intent handler
