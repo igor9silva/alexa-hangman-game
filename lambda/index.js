@@ -176,11 +176,24 @@ const GetStatusIntentHandler = {
     
     async handle(handlerInput) {
         
-        // TODO: implement
-
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
+        const { word, triedLetters } = attributes;
 
-        const speechText = `A palavra é ${attributes.word}. Você já tentou as letras: ${attributes.triedLetters.join(', ')}`;
+        let speechText = '';
+        
+        // say missing count (or tell user it've won)
+        if (missingCount > 1) {
+            speechText += p(`Faltam ${missingCount} letras.`);
+        } else if (missingCount === 1) {
+            speechText += p(`Falta 1 letra.`);
+        }
+
+        // say life count (or tell user it've lost)
+        if (lifeCount > 0) {
+            speechText += p(`Restam ${lifeCount} vidas.`);
+        } else {
+            return speak(`Acabaram suas vidas, você perdeu!`, true);
+        }
 
         // const speechText = `Vou listar os espaços: vazio, e, n, vazio, i, l, a, vazio, vazio, vazio. A palavra possui 10 letras. Você ainda tem 3 vidas.`;
 
