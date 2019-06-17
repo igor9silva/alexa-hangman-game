@@ -37,6 +37,7 @@ function countMissingLetters(word, triedLetters) {
     return word.length - totalHitCount;
 }
 
+// export functions
 module.exports.hasBeenGuessed = hasBeenGuessed;
 module.exports.countHits = countHits;
 module.exports.countLives = countLives;
