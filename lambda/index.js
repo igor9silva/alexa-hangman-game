@@ -256,8 +256,12 @@ function guessLetter(letter, attributes) {
 }
 
 function lifeCount(attributes) {
-    // TODO: implement
-    // return life count
+    
+    const { triedLetters, word } = attributes;
+    
+    return triedLetters.reduce((count, letter) => {
+        return count + (word.includes(letter) ? 0 : 1);
+    }, 0);
 }
 
 // This handler acts as the entry point for your skill, routing all request and response
