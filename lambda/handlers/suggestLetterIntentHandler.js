@@ -80,7 +80,11 @@ module.exports = {
         // check if letter hasnt been guessed yet
         // else stop here
         if (hasBeenGuessed(letter, triedLetters)) {
-            return speak(p(`Você já chutou a letra ${letter}`) + p(`Tente outra.`));
+            
+            const msg1 = localizedMessage(locale, 'You\'ve already guessed the letter {0}', letter);
+            const msg2 = localizedMessage(locale, 'Try another.');
+            
+            return speak(p(msg1) + p(msg2));
         }
 
         // persist new tried letter
