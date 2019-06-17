@@ -5,6 +5,9 @@ const { SUPPORTED_LANGUAGES } = require('./config');
 // VUI
 const { MESSAGES, WORDS } = require('./VUI');
 
+// Utils
+const { randomIndex } = require('./util');
+
 function localeIsValid(locale) {
 
     if (typeof(locale) !== 'string') {
