@@ -62,7 +62,7 @@ const LaunchRequestHandler = {
         attributes.triedLetters = [];
 
         handlerInput.attributesManager.setSessionAttributes(attributes);
-        
+
         return handlerInput.responseBuilder
                 .speak(sentences.join(' '))
                 .reprompt('Diga alguma letra...')
