@@ -115,7 +115,7 @@ const SuggestLetterIntentHandler = {
 
         // check if letter hasnt been guessed yet
         // else stop here
-        if (!hasBeenGuessed(letter, triedLetters)) {
+        if (hasBeenGuessed(letter, triedLetters)) {
             return speak(`Você já chutou a letra ${letter}. Tente outra.`);
         }
 
