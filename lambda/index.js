@@ -1,13 +1,15 @@
 const Alexa = require('ask-sdk-core');
 
-
+// Constants
 const { INITIAL_LIVES, WORDS, VALID_LETTERS } = require('./config');
 
+// Utils
 const {
     randomIndex,
     parseLetter,
 } = require('./util');
 
+// Intents
 const {
     HelpIntentHandler,
     CancelAndStopIntentHandler,
