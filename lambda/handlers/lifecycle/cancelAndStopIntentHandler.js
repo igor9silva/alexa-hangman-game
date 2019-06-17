@@ -11,6 +11,10 @@ module.exports = {
     },
 
     handle(handlerInput) {
+        
+        // get request locale
+        const locale = handlerInput.requestEnvelope.request.locale;
+        const l7d = messageLocalizer(locale);
 
         const speechText = `Tchau! Foi um bom jogo!`;
 
