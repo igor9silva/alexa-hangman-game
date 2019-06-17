@@ -4,19 +4,19 @@ const { INITIAL_LIVES } = require('./config');
 
 /// boolean
 /// return if letter has already been guessed
-module.exports.hasBeenGuessed = function hasBeenGuessed(letter, triedLetters) {
+function hasBeenGuessed(letter, triedLetters) {
     return triedLetters.includes(letter);
 }
 
 /// int
 /// return the hit count (how many occurrencies of `letter` in `word`)
-module.exports.countHits = function countHits(letter, word) {
+function countHits(letter, word) {
     return word.split(letter).length - 1; // `letter` occurrencies in `word`
 }
 
 /// int
 /// return the current life count
-module.exports.countLives = function countLives(word, triedLetters) {
+function countLives(word, triedLetters) {
 
     const failedAttempts = triedLetters.reduce((count, letter) => {
         return count + (word.includes(letter) ? 0 : 1);
@@ -27,7 +27,7 @@ module.exports.countLives = function countLives(word, triedLetters) {
 
 /// int
 /// return how many missing letters there are
-module.exports.countMissingLetters = function countMissingLetters(word, triedLetters) {
+function countMissingLetters(word, triedLetters) {
 
     // sum, for each letter, how many occurrencies of it there are
     const totalHitCount = triedLetters.reduce((count, letter) => {
@@ -36,3 +36,8 @@ module.exports.countMissingLetters = function countMissingLetters(word, triedLet
     
     return word.length - totalHitCount;
 }
+
+module.exports.hasBeenGuessed = hasBeenGuessed;
+module.exports.countHits = countHits;
+module.exports.countLives = countLives;
+module.exports.countMissingLetters = countMissingLetters;
