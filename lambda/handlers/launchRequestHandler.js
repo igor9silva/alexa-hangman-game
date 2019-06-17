@@ -30,20 +30,29 @@ module.exports = {
 
         // save attributes
         handlerInput.attributesManager.setSessionAttributes(attributes);
+        
+        'Hello, you are in the Hangman Game!': `Olá, você está no Jogo da Forca!`,
+        'The game has started!': `O jogo já começou!`,
+        'The word has {0} letters.': `A palavra possui {0} letras.`,
+        'You have {0} {1}.': `Você tem {0} {1}.`,
+        'Guess a letter.': 'Chute uma letra.',
+        'Guess any letter...': 'Diga alguma letra...',
+        
+        const lifeCountStr = localizedMessage(locale, )
 
         // say hello, the chosen word length and how
         // many lives the user have
         const sentences = [
-            `Olá, você está no Jogo da Forca!`,
-            `O jogo já começou!`,
-            `A palavra possui ${chosenWord.length} letras.`,
-            `Você tem ${INITIAL_LIVES} vidas.`,
-            `Chute uma letra.`,
+            localizedMessage(locale, 'Hello, you are in the Hangman Game!'),
+            localizedMessage(locale, 'The game has started!'),
+            localizedMessage(locale, 'The word has {0} letters.', chosenWord.length),
+            localizedMessage(locale, 'You have {0} lives.', INITIAL_LIVES),
+            localizedMessage(locale, 'Guess a letter.'),
         ];
 
         return handlerInput.responseBuilder
                 .speak(sentences.join(' '))
-                .reprompt('Diga alguma letra...')
+                .reprompt(localizedMessage(locale, 'Guess any letter...'))
                 .getResponse();
     }
 }
