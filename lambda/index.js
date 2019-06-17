@@ -99,6 +99,7 @@ const SuggestLetterIntentHandler = {
                     
                 } else {
                     speechText = 'Acabaram suas vidas, você perdeu!';
+                    ended = true;
                 }
 
                 speechText += `Você chutou a letra ${letter}.`;
