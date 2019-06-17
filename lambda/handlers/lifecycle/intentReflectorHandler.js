@@ -16,10 +16,8 @@ module.exports = {
         const locale = handlerInput.requestEnvelope.request.locale;
         const l7d = messageLocalizer(locale);
 
-        const speechText = `You você invocou ${intentName}`;
-
         return handlerInput.responseBuilder
-                .speak(speechText)
+                .speak(l7d('You você invocou {0}', intentName))
                 .getResponse();
     }
 }
