@@ -61,7 +61,7 @@ const LaunchRequestHandler = {
         // save attributes
         handlerInput.attributesManager.setSessionAttributes(attributes);
 
-        // say hello, the chosen word length and how 
+        // say hello, the chosen word length and how
         // many lives the user have
         const sentences = [
             `Olá, você está no Jogo da Forca!`,
