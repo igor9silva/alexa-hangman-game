@@ -297,6 +297,8 @@ function countLives(triedLetters, word) {
     return INITIAL_LIVES - failedAttempts;
 }
 
+/// int
+/// return how many missing letters there are
 function countMissingLetters(attributes) {
     
     const { triedLetters, word } = attributes;
