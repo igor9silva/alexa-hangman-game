@@ -125,7 +125,7 @@ const SuggestLetterIntentHandler = {
 
         // get hit, life and missing letters count
         const hitCount = countHits(letter, word);
-        const lifeCount = countLives(triedLetters, word);
+        const lifeCount = countLives(word, triedLetters);
         const missingCount = countMissingLetters(word, triedLetters);
         
         console.log('letter:', letter);
@@ -181,7 +181,7 @@ const GetStatusIntentHandler = {
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
         const { word, triedLetters } = attributes;
         
-        const lifeCount = countLives(triedLetters, word);
+        const lifeCount = countLives(word, triedLetters);
         const missingCount = countMissingLetters(word, triedLetters);
 
         let speechText = '';
@@ -348,7 +348,7 @@ function countHits(letter, word) {
 
 /// int
 /// return the current life count
-function countLives(triedLetters, word) {
+function countLives(word, triedLetters) {
 
     const failedAttempts = triedLetters.reduce((count, letter) => {
         return count + (word.includes(letter) ? 0 : 1);
