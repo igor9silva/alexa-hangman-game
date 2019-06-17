@@ -248,9 +248,11 @@ function randomIndex(min, max) {
 
 // ACTUAL GAME LOGIC
 
+/// boolean
+/// valid if letter wasn't guessed yet
 function isLetterValid(letter, attributes) {
     const { triedLetters } = attributes;
-    return triedLetters.includes(letter);
+    return !triedLetters.includes(letter);
 }
 
 function guessLetter(letter, attributes) {
