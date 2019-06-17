@@ -17,7 +17,7 @@ const {
 } = require('../game');
 
 // i18n
-const { localizedMessage } = require('../i18n');
+const { messageLocalizer } = require('../i18n');
 
 module.exports = {
     
@@ -50,6 +50,7 @@ module.exports = {
         
         // get request locale
         const locale = request.locale;
+        const l7d = messageLocalizer(locale);
 
         let speechText = '';
         let ended = false;
@@ -97,24 +98,24 @@ module.exports = {
         const missingCount = countMissingLetters(word, triedLetters);
 
         // say guessed letter
-        speechText += p(`Você chutou a letra ${letter}.`);
+        speechText += p(localizedMessage(locale, `Você chutou a letra ${letter}.`));
 
         // say hit count
         if (hitCount > 1) {
-            speechText += p(`Acertou ${hitCount} posições.`);
+            speechText += p(localizedMessage(locale, `Acertou ${hitCount} posições.`));
         } else if (hitCount === 1) {
-            speechText += p(`Acertou 1 posição.`);
+            speechText += p(localizedMessage(locale, `Acertou 1 posição.`));
         } else {
-            speechText += p(`Não acertou nada.`);
+            speechText += p(localizedMessage(locale, `Não acertou nada.`));
         }
         
         // say missing count (or tell user it've won)
         if (missingCount > 1) {
-            speechText += p(`Faltam ${missingCount} letras.`);
+            speechText += p(localizedMessage(locale, `Faltam ${missingCount} letras.`));
         } else if (missingCount === 1) {
-            speechText += p(`Falta 1 letra.`);
+            speechText += p(localizedMessage(locale, `Falta 1 letra.`));
         } else {
-            return speak(`Parabéns, você ganhou! A palavra é ${word}.`, true);
+            return speak(localizedMessage(locale, `Parabéns, você ganhou! A palavra é ${word}.`), true);
         }
 
         // say life count (or tell user it've lost)
