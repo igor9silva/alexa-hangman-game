@@ -278,12 +278,8 @@ function hasntBeenGuessed(letter, triedLetters) {
 
 /// int
 /// return the hit count (how many occurrencies of `letter` in `word`)
-function countHits(letter, triedLetters, word) {
-    if (!triedLetters.includes(letter)) {
-        return word.split(letter).length - 1; // `letter` occurrencies in `word`
-    } else {
-        return 0;
-    }
+function countHits(letter, word) {
+    return word.split(letter).length - 1; // `letter` occurrencies in `word`
 }
 
 /// int
@@ -303,6 +299,7 @@ function countMissingLetters(word, triedLetters, letter) {
     
     triedLetters = triedLetters.concat(letter);
 
+    // sum, for each letter, how many occurrencies of it there are
     return triedLetters.reduce((count, letter) => {
         return count + (word.split(letter).length - 1);
     }, 0);
