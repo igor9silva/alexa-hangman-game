@@ -126,7 +126,7 @@ const SuggestLetterIntentHandler = {
         // get hit, life and missing letters count
         const hitCount = countHits(letter, word);
         const lifeCount = countLives(triedLetters, word);
-        const missingCount = countMissingLetters(word, triedLetters, letter);
+        const missingCount = countMissingLetters(word, triedLetters);
         
         console.log('letter:', letter);
         console.log('word:', word);
@@ -332,9 +332,7 @@ function countLives(triedLetters, word) {
 
 /// int
 /// return how many missing letters there are
-function countMissingLetters(word, triedLetters, letter) {
-    
-    triedLetters = triedLetters.concat(letter);
+function countMissingLetters(word, triedLetters) {
 
     // sum, for each letter, how many occurrencies of it there are
     const totalHitCount = triedLetters.reduce((count, letter) => {
