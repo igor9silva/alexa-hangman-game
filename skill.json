@@ -1,0 +1,22 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:295736110622:function:94e2f241-8b8b-4bdd-b9cb-9c7cc1657170:Release_0"
+        },
+        "interfaces": []
+      }
+    },
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "Forca"
+        },
+        "pt-BR": {
+          "name": "Forca"
+        }
+      }
+    }
+  }
+}

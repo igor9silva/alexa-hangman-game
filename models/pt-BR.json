@@ -1,0 +1,291 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "jogo da forca",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "desistir",
+            "Chega",
+            "Parar",
+            "Cancelar",
+            "Desisto"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "help",
+            "me ajude",
+            "me ajuda",
+            "o que eu posso fazer",
+            "o que eu posso pedir",
+            "quais sao minhas opcoes",
+            "quais as minhas opções",
+            "ajuda"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "desistir",
+            "desisto",
+            "cancelar",
+            "parar",
+            "chega"
+          ]
+        },
+        {
+          "name": "SuggestLetterIntent",
+          "slots": [
+            {
+              "name": "letter",
+              "type": "LETTER",
+              "samples": [
+                "letra {letter}",
+                "{letter}"
+              ]
+            }
+          ],
+          "samples": [
+            "eu chuto {letter}",
+            "tenta {letter}",
+            "{letter}",
+            "letra {letter}"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "GetStatusIntent",
+          "slots": [],
+          "samples": [
+            "quais casas faltam",
+            "quais faltam",
+            "o que falta",
+            "quais as posicoes que acertei",
+            "quais as posicoes que acertamos",
+            "quais as posicoes preenchidas",
+            "quais as posicoes vazias",
+            "quais as posicoes livres",
+            "quais posicoes estao livres",
+            "quais posicoes estao preenchidas",
+            "quais posicoes estao vazias",
+            "quais posicoes faltam",
+            "quais posicoes ja acertamos",
+            "quais posicoes ja acertei",
+            "quais as posicoes que ja acertamos",
+            "quais as posicoes que ja acertei",
+            "quais as posicoes",
+            "status do jogo",
+            "como esta o jogo",
+            "como estamos",
+            "como estou",
+            "quais letras ja foram utilizadas",
+            "quais letras ja foram usadas",
+            "quais as letras ja usadas",
+            "quais letras ja usadas",
+            "letras ja usadas",
+            "letras ja utilizadas",
+            "letras que ja foram",
+            "letras que ja falei",
+            "quais letras eu posso falar",
+            "quais letras faltam",
+            "quais as letras disponiveis",
+            "letras disponiveis",
+            "que letrar ja falei",
+            "quais letras ja foram",
+            "quais letras eu ja falei",
+            "que letra eu ja falei",
+            "que letras eu ja falei",
+            "quais letras ja falei",
+            "Status",
+            "Me dê a situação",
+            "Situação",
+            "Quanto falta",
+            "Qual a palavra mesmo",
+            "Qual a palavra",
+            "Quantas vida eu tenho",
+            "Como estou indo",
+            "Qual a situação",
+            "Como está o jogo",
+            "Como está"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "W"
+              }
+            },
+            {
+              "name": {
+                "value": "Y"
+              }
+            },
+            {
+              "name": {
+                "value": "Z"
+              }
+            },
+            {
+              "name": {
+                "value": "X"
+              }
+            },
+            {
+              "name": {
+                "value": "V"
+              }
+            },
+            {
+              "name": {
+                "value": "U"
+              }
+            },
+            {
+              "name": {
+                "value": "T"
+              }
+            },
+            {
+              "name": {
+                "value": "S"
+              }
+            },
+            {
+              "name": {
+                "value": "R"
+              }
+            },
+            {
+              "name": {
+                "value": "Q"
+              }
+            },
+            {
+              "name": {
+                "value": "P"
+              }
+            },
+            {
+              "name": {
+                "value": "O"
+              }
+            },
+            {
+              "name": {
+                "value": "N"
+              }
+            },
+            {
+              "name": {
+                "value": "M"
+              }
+            },
+            {
+              "name": {
+                "value": "L"
+              }
+            },
+            {
+              "name": {
+                "value": "K"
+              }
+            },
+            {
+              "name": {
+                "value": "J"
+              }
+            },
+            {
+              "name": {
+                "value": "I"
+              }
+            },
+            {
+              "name": {
+                "value": "H"
+              }
+            },
+            {
+              "name": {
+                "value": "G"
+              }
+            },
+            {
+              "name": {
+                "value": "F"
+              }
+            },
+            {
+              "name": {
+                "value": "E"
+              }
+            },
+            {
+              "name": {
+                "value": "D"
+              }
+            },
+            {
+              "name": {
+                "value": "C"
+              }
+            },
+            {
+              "name": {
+                "value": "B"
+              }
+            },
+            {
+              "name": {
+                "value": "A"
+              }
+            }
+          ],
+          "name": "LETTER"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "SuggestLetterIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "letter",
+              "type": "LETTER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.843300495036.1016598276060"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.843300495036.1016598276060",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual letra?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "5"
+}

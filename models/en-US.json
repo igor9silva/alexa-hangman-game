@@ -1,0 +1,262 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "hangman game",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "quit",
+            "exit",
+            "enough",
+            "cancel"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "help",
+            "i need help",
+            "help me",
+            "what can i do",
+            "what can i ask",
+            "what are my options"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "quit",
+            "exit",
+            "enough",
+            "cancel"
+          ]
+        },
+        {
+          "name": "SuggestLetterIntent",
+          "slots": [
+            {
+              "name": "letter",
+              "type": "LETTER",
+              "samples": [
+                "letter {letter}",
+                "{letter}"
+              ]
+            }
+          ],
+          "samples": [
+            "i guess {letter}",
+            "my guess is {letter}",
+            "{letter}",
+            "letter {letter}"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "GetStatusIntent",
+          "slots": [],
+          "samples": [
+            "how many cases are missing",
+            "how many cases",
+            "what is missing",
+            "what have i hit",
+            "what cases have i hit",
+            "what cases are empty",
+            "what cases are free",
+            "which cases have i hit",
+            "which cases are empty",
+            "which cases are free",
+            "what i've hit",
+            "which cases i've hit",
+            "how am i going",
+            "how am i",
+            "game status",
+            "what letters have i guessed",
+            "letters i've guessed",
+            "what letters have i tried",
+            "letters i've tried",
+            "what is the situation",
+            "situation",
+            "give me the situation",
+            "how many left",
+            "how many cases are left",
+            "how many lives do i have"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "W"
+              }
+            },
+            {
+              "name": {
+                "value": "Y"
+              }
+            },
+            {
+              "name": {
+                "value": "Z"
+              }
+            },
+            {
+              "name": {
+                "value": "X"
+              }
+            },
+            {
+              "name": {
+                "value": "V"
+              }
+            },
+            {
+              "name": {
+                "value": "U"
+              }
+            },
+            {
+              "name": {
+                "value": "T"
+              }
+            },
+            {
+              "name": {
+                "value": "S"
+              }
+            },
+            {
+              "name": {
+                "value": "R"
+              }
+            },
+            {
+              "name": {
+                "value": "Q"
+              }
+            },
+            {
+              "name": {
+                "value": "P"
+              }
+            },
+            {
+              "name": {
+                "value": "O"
+              }
+            },
+            {
+              "name": {
+                "value": "N"
+              }
+            },
+            {
+              "name": {
+                "value": "M"
+              }
+            },
+            {
+              "name": {
+                "value": "L"
+              }
+            },
+            {
+              "name": {
+                "value": "K"
+              }
+            },
+            {
+              "name": {
+                "value": "J"
+              }
+            },
+            {
+              "name": {
+                "value": "I"
+              }
+            },
+            {
+              "name": {
+                "value": "H"
+              }
+            },
+            {
+              "name": {
+                "value": "G"
+              }
+            },
+            {
+              "name": {
+                "value": "F"
+              }
+            },
+            {
+              "name": {
+                "value": "E"
+              }
+            },
+            {
+              "name": {
+                "value": "D"
+              }
+            },
+            {
+              "name": {
+                "value": "C"
+              }
+            },
+            {
+              "name": {
+                "value": "B"
+              }
+            },
+            {
+              "name": {
+                "value": "A"
+              }
+            }
+          ],
+          "name": "LETTER"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "SuggestLetterIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "letter",
+              "type": "LETTER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.843300495036.1016598276060"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.843300495036.1016598276060",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what is the letter?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "1"
+}
