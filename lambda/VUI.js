@@ -1,8 +1,5 @@
 
-const SUPPORTED_LANGUAGES = {
-    'en': ['US', 'UK', 'AU', 'CA', 'IN'],
-    'pt': ['BR', 'PT'],
-};
+const { SUPPORTED_LANGUAGES } = require('./config');
 
 const MESSAGES = {
     'en' : {
@@ -55,4 +52,8 @@ module.exports.localizedMessage = function localizedMessage(key, locale) {
     const [language] = locale.split('_');
     
     return MESSAGES[language][key];
+}
+
+module.exports.localizedRandomeWord = function localizedRandomeWord(locale) {
+    
 }
