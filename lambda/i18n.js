@@ -41,20 +41,23 @@ function localeIsValid(locale) {
     return true;
 }
 
-module.exports.localizedMessage = function localizedMessage(locale, key, ...params) {
+module.exports.messageLocalizer = function messageLocalizer(locale) {
+    
+    return function localizedMessage(key, ...params) {
 
-    if (!localeIsValid(locale)) {
-        throw "LocaleNotSupported";
+        if (!localeIsValid(locale)) {
+            throw "LocaleNotSupported";
+        }
+
+        const [language] = locale.split('_');
+
+        let value = MESSAGES[language][key];
+
+        // replace `{0}` for params[0], `{1}` for params[1], etc
+        params.forEach((param, i) => value = value.replace(`{${i}}`, param));
+
+        return value;
     }
-
-    const [language] = locale.split('_');
-
-    let value = MESSAGES[language][key];
-
-    // replace `{0}` for params[0], `{1}` for params[1], etc
-    params.forEach((param, i) => value = value.replace(`{${i}}`, param));
-
-    return value;
 }
 
 module.exports.localizedRandomWord = function localizedRandomeWord(locale) {
