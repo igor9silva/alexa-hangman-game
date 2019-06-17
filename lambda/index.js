@@ -246,6 +246,8 @@ function randomIndex(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+// ACTUAL GAME LOGIC
+
 function isLetterValid(letter, attributes) {
     const { triedLetters } = attributes;
     return triedLetters.includes(letter);
