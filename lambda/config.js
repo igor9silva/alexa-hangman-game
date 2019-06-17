@@ -1,13 +1,5 @@
-module.exports.INITIAL_LIVES = 5;
 
-module.exports.WORDS = [
-    'ventilador',
-    'parede',
-    'porta',
-    'celular',
-    'rato',
-    'macarrao',
-];
+module.exports.INITIAL_LIVES = 5;
 
 module.exports.VALID_LETTERS = [
     'A', 'B', 'C', 'D', 'E', 'F',
@@ -21,3 +13,12 @@ module.exports.SUPPORTED_LANGUAGES = {
     'en': ['US', 'UK', 'AU', 'CA', 'IN'],
     'pt': ['BR', 'PT'],
 };
+
+module.exports.WORDS = [
+    'ventilador',
+    'parede',
+    'porta',
+    'celular',
+    'rato',
+    'macarrao',
+];
