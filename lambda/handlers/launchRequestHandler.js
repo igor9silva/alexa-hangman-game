@@ -8,7 +8,7 @@ const {
 // Utils
 const { randomIndex } = require('./util');
 
-const LaunchRequestHandler = {
+module.exports = {
     
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
@@ -46,4 +46,3 @@ const LaunchRequestHandler = {
     }
 };
 
-module.exports.LaunchRequestHandler = LaunchRequestHandler;
