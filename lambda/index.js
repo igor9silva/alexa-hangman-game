@@ -95,7 +95,7 @@ const SuggestLetterIntentHandler = {
                 const lifeCount = lifeCount(attributes);
 
                 speechText += `Você chutou a letra ${letter}.`;
-                speechText += (hitCount > 0) ? `E acertou ${hitCount}.` : `E não acertou nada.`;
+                speechText += (hitCount > 0) ? `E acertou ${hitCount} posições.` : `E não acertou nada.`;
                 speechText += `Restam ${lifeCount} vidas.`;
                 
             } else {
