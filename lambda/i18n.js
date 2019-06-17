@@ -48,8 +48,12 @@ module.exports.localizedMessage = function localizedMessage(locale, key, ...para
     }
 
     const [language] = locale.split('_');
-
-    return MESSAGES[language][key];
+    
+    let value = MESSAGES[language][key];
+    
+    params.forEach((param, i) => value.replace(`{${i}}`, param));
+    
+    return value;
 }
 
 module.exports.localizedRandomWord = function localizedRandomeWord(locale) {
