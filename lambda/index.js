@@ -47,8 +47,19 @@ const LaunchRequestHandler = {
     },
     
     async handle(handlerInput) {
-        
+
+        // shuffle a word
         const chosenWord = WORDS[randomIndex(0, WORDS.length)];
+
+        // get session attributes
+        const attributes = await handlerInput.attributesManager.getSessionAttributes();
+
+        // create initial params
+        attributes.word = chosenWord.toUpperCase();
+        attributes.triedLetters = [];
+
+        // save attributes
+        handlerInput.attributesManager.setSessionAttributes(attributes);
 
         const sentences = [
             `Olá, você está no Jogo da Forca!`,
@@ -58,13 +69,7 @@ const LaunchRequestHandler = {
             `Chute uma letra.`,
         ];
 
-        const attributes = await handlerInput.attributesManager.getSessionAttributes();
-
-        // create initial attributes
-        attributes.word = chosenWord.toUpperCase();
-        attributes.triedLetters = [];
-
-        handlerInput.attributesManager.setSessionAttributes(attributes);
+        
 
         return handlerInput.responseBuilder
                 .speak(sentences.join(' '))
