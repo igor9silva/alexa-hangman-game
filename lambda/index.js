@@ -86,15 +86,13 @@ const SuggestLetterIntentHandler = {
         let speechText = '';
         
         const attributes = await handlerInput.attributesManager.getSessionAttributes();
-        
-        speechText = `A palavra é ${attributes.word}. Você já tentou as letras: ${attributes.triedLetters.join(', ')}`;
 
-        // if (LETTERS.includes(letter)) {
-        //     // TODO: validate the letter
-        //     speechText = `Você chutou ${letter.toUpperCase()}, mas errou! Tente outra.`;
-        // } else {
-        //     speechText = `A letra que você chutou não é válida. Tente outra.`;
-        // }
+        if (LETTERS.includes(letter)) {
+            // TODO: validate the letter
+            speechText = `Você chutou ${letter.toUpperCase()}, mas errou! Tente outra.`;
+        } else {
+            speechText = `A letra que você chutou não é válida. Tente outra.`;
+        }
 
         return handlerInput.responseBuilder
                 .speak(speechText)
